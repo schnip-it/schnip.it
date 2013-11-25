@@ -1,5 +1,5 @@
 """
-Django settings for schnipit project.
+Django settings for shnipit project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -51,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'schnipit.urls'
+ROOT_URLCONF = 'shnipit.urls'
 
-WSGI_APPLICATION = 'schnipit.wsgi.application'
+WSGI_APPLICATION = 'shnipit.wsgi.application'
 
 
 # Database
