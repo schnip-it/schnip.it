@@ -6,8 +6,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
-import sys
-if DEBUG and sys.version_info > (3, 2): INSTALLED_APPS += ('django_extensions',)
+INSTALLED_APPS += ('django_extensions', 'south')
 
 DATABASES = {
     'default': {
