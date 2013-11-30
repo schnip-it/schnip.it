@@ -3,3 +3,7 @@ snippet.sock
 uwsgi.ini
 
 .dir-locals.el
+TAGS
+*.sqlite3
+**/*.pyc
+ghostdriver.log
