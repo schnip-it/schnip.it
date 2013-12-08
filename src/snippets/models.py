@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-class Tag(models.Model):
-    name = models.CharField(max_length=63, unique=True)
-
-    def __str__(self): return self.name
+from taggit.managers import TaggableManager
 
 class Board(models.Model):
     name = models.CharField(max_length=255)
@@ -22,12 +18,6 @@ class Snippet(models.Model):
     description = models.TextField()
     board = models.ForeignKey(Board)
     code = models.TextField()
-    tags = models.ManyToManyField(Tag)
-    score = models.FloatField(default=0)
-    score0 = models.PositiveIntegerField(default=0)
-    score1 = models.PositiveIntegerField(default=0)
-    score2 = models.PositiveIntegerField(default=0)
-    score3 = models.PositiveIntegerField(default=0)
-    score4 = models.PositiveIntegerField(default=0)
+    tags = TaggableManager()
 
     def __str__(self): return self.title
