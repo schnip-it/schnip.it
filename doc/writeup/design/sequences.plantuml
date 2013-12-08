@@ -1,0 +1,187 @@
+@startuml seq_board-create.svg
+
+title Creating a board
+
+actor Member
+boundary "Board Creation Form" as Website
+control "Clientside Script" as Script
+control Controller
+
+loop
+    Member  -> Website: Board data
+    Website -> Script:  Board data
+    Script  -> Member:  Validation result
+end
+
+Member     -> Website:    Board data
+Website    -> Controller: POSTed board data
+create entity Board
+Controller -> Board:      Board data
+Board     --> Controller
+Controller -> Board:      Validation request
+
+alt Data validates
+    database Database
+
+    Board     --> Controller: OK
+    Controller -> Board:      Save request
+    Board      -> Database:   Save request
+    Database  --> Board
+    Board     --> Controller: OK
+    Controller -> Member:     Board page
+else Data doesn't validate
+    Board     --> Controller: Fail
+    Controller -> Member:     Form showing errors
+end
+
+@enduml
+
+
+@startuml seq_snippet-create.svg
+
+title Creating a snippet
+
+actor Member
+boundary "Snippet Creation Form" as Website
+control "Clientside Script" as Script
+control Controller
+
+loop
+    Member  -> Website: Snippet data
+    Website -> Script:  Snippet data
+    Script  -> Member:  Validation result
+end
+
+Member     -> Website:    Snippet data
+Website    -> Controller: POSTed snippet data
+create entity Snippet
+Controller -> Snippet:    Snippet data
+Snippet   --> Controller
+Controller -> Snippet:    Validation request
+
+alt Data validates
+    database Database
+    
+    Snippet   --> Controller: OK
+    Controller -> Snippet:    Save request
+    Snippet    -> Database:   Save request
+    Database  --> Snippet
+    Snippet   --> Controller: OK
+    Controller -> Member:     Snippet page
+else Data doesn't validate
+    Snippet   --> Controller: Fail
+    Controller -> Member:     Form showing errors
+end
+
+@enduml
+
+
+@startuml seq_user-create.svg
+
+title Creating a user account
+
+actor User
+boundary "Registration Form" as Website
+control "Clientside Script" as Script
+control Controller
+
+loop
+    User    -> Website: User data
+    Website -> Script:  User data
+    Script  -> User:    Validation result
+end
+
+User -> Website: User data
+Website -> Controller: POSTed user data
+create entity "User Account" as Account
+Controller -> Account: User data
+Account --> Controller
+Controller -> Account: Validation request
+
+alt Data validates
+    database Database
+
+    User      --> Controller: OK
+    Controller -> Account:    Save request
+    User       -> Database:   Save request
+    Database  --> Account
+    Account   --> Controller: OK
+    Controller -> User:       Home page with confirmation message
+else Data doesn't validate
+    Account   --> Controller: Fail
+    Controller -> User:       Form showing errors
+end
+
+@enduml
+
+
+@startuml seq_snippet-favourite.svg
+
+title Favouriting a snippet
+
+actor Member
+boundary "Snippet Page" as Website
+control "Clientside Script" as Script
+control Controller
+entity Snippet
+database Database
+
+Member     -> Website:    Click to favourite button
+Website    -> Script:     Favourite request
+Script     -> Controller: Favourite request
+Controller -> Database:   Request for appropriate snippet
+Database   -> Controller: Snippet entity
+Controller -> Snippet:    Favourite request
+Snippet   --> Controller
+Controller -> Snippet:    Save request
+Snippet    -> Database:   Favourite data
+Database  --> Script
+Script     -> Member:     OK
+
+@enduml
+
+
+@startuml seq_user-authenticate.svg
+
+title User authentication
+
+actor User
+boundary "Login Form" as Website
+control Controller
+entity "User Account" as Account
+database Database
+
+User       -> Controller: Account credentials
+Controller -> Database:   Account request
+
+alt Account exists
+    Database   -> Controller: Account
+    Controller -> User:       Home page with confirmation message
+else Account does not exist
+    Database   -> Controller: Failure
+    Controller -> User:       Login form showing error
+end
+
+@enduml
+
+
+@startuml seq_snippet-search.svg
+
+title Searching for a snippet
+
+actor User
+boundary "Search Page" as Page
+control "Clientside Script" as Script
+control Controller
+database Database
+
+
+User       -> Box:        Search query
+Box        -> Script:     Search query
+Script     -> Controller: Search query
+Controller -> Database:   Query
+Database   -> Controller: List of snippets
+Controller -> Script:     JSON list of snippets
+Script     -> User:       Scripts
+
+@enduml
