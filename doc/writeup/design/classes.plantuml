@@ -1,69 +1,69 @@
-@startuml class_snippets.svg
+@startuml class_snippets.png
 namespace snippets {
     namespace snippets.models {
         class .Board {
-            name         : django.db.models.DateField
-            owner        : django.db.models.ForeignKey<User>
-            read_public  : django.db.models.BooleanField
+            name : django.db.models.DateField
+            owner : django.db.models.ForeignKey<User>
+            read_public : django.db.models.BooleanField
             write_public : django.db.models.BooleanField
-            read_users   : django.db.models.ManyToManyField<User>
-            write_users  : django.db.models.ManyToManyField<User>
+            read_users : django.db.models.ManyToManyField<User>
+            write_users : django.db.models.ManyToManyField<User>
         }
         .Board --|> django.db.models.Model
             
         class .Snippet {
-            creation_time    : django.db.models.DateField
-            title            : django.db.models.CharField
-            description      : django.db.models.TextField
-            board            : django.db.models.ForeignKey<Board>
-            code             : django.db.models.TextField
-            tags             : taggit.managers.TaggableManager
+            creation_time : django.db.models.DateField
+            title : django.db.models.CharField
+            description : django.db.models.TextField
+            board : django.db.models.ForeignKey<Board>
+            code : django.db.models.TextField
+            tags : taggit.managers.TaggableManager
             favourited_users : django.db.models.ManyToManyField<User>
         }
         .Snippet --|> django.db.models.Model
     }
 
     class .views {
-        {static} home_page(req : django.http.HttpRequest)                           : django.http.HttpResponse
-        {static} search(req : django.http.HttpRequest, query : str)                 : django.http.HttpResponse
-        {static} login_form(req : django.http.HttpRequest)                          : django.http.HttpResponse
-        {static} login(req : django.http.HttpRequest)                               : django.http.HttpResponse
-        {static} user_create(req : django.http.HttpRequest)                         : django.http.HttpResponse
-        {static} user_view(req : django.http.HttpRequest, user_id : int)            : django.http.HttpResponse
-        {static} privacy_policy(req : django.http.HttpRequest)                      : django.http.HttpResponse
-        {static} help(req : django.http.HttpRequest)                                : django.http.HttpResponse
-        {static} about_us(req : django.http.HttpRequest)                            : django.http.HttpResponse
-        {static} contact_form(req : django.http.HttpRequest)                        : django.http.HttpResponse
-        {static} contact(req : django.http.HttpRequest)                             : django.http.HttpResponse
-        {static} snippet_list(req : django.http.HttpRequest)                        : django.http.HttpResponse
-        {static} snippet_create_form(req : django.http.HttpRequest)                 : django.http.HttpResponse
-        {static} snippet_create(req : django.http.HttpRequest)                      : django.http.HttpResponse
+        {static} home_page(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} search(req : django.http.HttpRequest, query : str) : django.http.HttpResponse
+        {static} login_form(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} login(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} user_create(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} user_view(req : django.http.HttpRequest, user_id : int) : django.http.HttpResponse
+        {static} privacy_policy(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} help(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} about_us(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} contact_form(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} contact(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} snippet_list(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} snippet_create_form(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} snippet_create(req : django.http.HttpRequest) : django.http.HttpResponse
         {static} snippet_edit_form(req : django.http.HttpRequest, snippet_id : int) : django.http.HttpResponse
-        {static} snippet_edit(req : django.http.HttpRequest)                        : django.http.HttpResponse
-        {static} snippet_view(req : django.http.HttpRequest, snippet_id : int)      : django.http.HttpResponse
+        {static} snippet_edit(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} snippet_view(req : django.http.HttpRequest, snippet_id : int) : django.http.HttpResponse
         {static} snippet_favourite(req : django.http.HttpRequest, snippet_id : int) : django.http.HttpResponse
-        {static} board_create_form(req : django.http.HttpRequest)                   : django.http.HttpResponse
-        {static} board_create(req : django.http.HttpRequest)                        : django.http.HttpResponse
-        {static} board_edit_form(req : django.http.HttpRequest, board_id : int)     : django.http.HttpResponse
-        {static} board_edit(req : django.http.HttpRequest)                          : django.http.HttpResponse
-        {static} board_view(req : django.http.HttpRequest, board_id : int)          : django.http.HttpResponse
+        {static} board_create_form(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} board_create(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} board_edit_form(req : django.http.HttpRequest, board_id : int) : django.http.HttpResponse
+        {static} board_edit(req : django.http.HttpRequest) : django.http.HttpResponse
+        {static} board_view(req : django.http.HttpRequest, board_id : int) : django.http.HttpResponse
     }
 }
 @enduml
 
-@startuml class_ratings.svg
+@startuml class_ratings.png
 namespace ratings {
     namespace ratings.models {
         class .Rating {
-            content_type   : django.db.models.ForeignKey<ContentType>
-            object_id      : django.db.models.PositiveIntegerField
-            object         : django.contenttypes.generics.GenericKey
-            score0         : django.db.models.PositiveIntegerField
-            score1         : django.db.models.PositiveIntegerField
-            score2         : django.db.models.PositiveIntegerField
-            score3         : django.db.models.PositiveIntegerField
-            score4         : django.db.models.PositiveIntegerField
-            average()      : float
+            content_type : django.db.models.ForeignKey<ContentType>
+            object_id : django.db.models.PositiveIntegerField
+            object : django.contenttypes.generics.GenericKey
+            score0 : django.db.models.PositiveIntegerField
+            score1 : django.db.models.PositiveIntegerField
+            score2 : django.db.models.PositiveIntegerField
+            score3 : django.db.models.PositiveIntegerField
+            score4 : django.db.models.PositiveIntegerField
+            average() : float
             distribution() : tuple<float, float, float, float, float>
         }
         .Score --|> django.db.models.Model
