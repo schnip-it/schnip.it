@@ -1,0 +1,9 @@
+% -*- mode: context -*-
+
+\startenvironment decorations
+  \setuppagenumbering [location=footer]
+  \setupheader        [text][after=\hrule]
+  \setupheadertexts   [{\getmarking[section]}][\sc Group2]
+  \setupfooter        [text][before=\hrule]
+
+\stopenvironment

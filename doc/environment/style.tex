@@ -1,0 +1,56 @@
+% -*- mode: context -*-
+
+\startenvironment style
+
+  \usemodule   [simplefonts]
+  \setmainfont [IwonaLight]
+  \setmathfont [Palatino]
+
+  % \setuphead [section]       [style=\ssc\sc,
+  %                             after={\blank[1.5em]},
+  %                             page=yes]
+  % \setuphead [subsection]    [style=\ssb,
+  %                             after={\blank[1em]}]
+  % \setuphead [subsubsection] [style=\ssa,
+  %                             after={\blank[0.5em]}]
+  \define[2]\formatsection{\midaligned{— #1 {\sc #2} —}}
+  \define[2]\formatsubsection{#1 \underbar{#2}}
+  \define[2]\formatsubsubsection{#1 #2}
+  \define[2]\formatsubject{#2}
+  \setuphead [section]       [command=\formatsection,
+                              after={\blank[1.5em]},
+                              textstyle=\sc,
+                              style=\tfc,
+                              page=yes]
+  \setuphead [subsection]    [command=\formatsubsection,
+                              after={\blank[1em]},
+                              textstyle=\sc,
+                              style=\tfb,
+                              page=no]
+  \setuphead [subsubsection] [command=\formatsubsubsection,
+                              after={\blank[0.5em]},
+                              textstyle=\sc,
+                              style=\tfa,
+                              page=no]
+  \setuphead [subject]       [command=\formatsubject,
+                              after={},
+                              textstyle=\bf,
+                              style=\tfa,
+                              page=no]
+
+  \setupindenting [1em, yes]
+  \setupwhitespace [medium]
+
+  \setupmakeup[align=middle]
+
+  \setupdelimitedtext[blockquote][style={\it}]
+
+  % Hack for MkIV math aligns
+  \unprotect
+  \def\math_alignment_NC_first
+  {\dostarttagged\t!mathtablerow\empty
+   \dostarttagged\t!mathtablecell\empty
+   \glet\math_alignment_NC\math_alignment_NC_rest}
+  \protect
+
+\stopenvironment
