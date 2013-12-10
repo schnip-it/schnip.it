@@ -1,4 +1,4 @@
-@startuml seq_board-create.svg
+@startuml seq_board-create.png
 
 title Creating a board
 
@@ -37,7 +37,7 @@ end
 @enduml
 
 
-@startuml seq_snippet-create.svg
+@startuml seq_snippet-create.png
 
 title Creating a snippet
 
@@ -76,7 +76,7 @@ end
 @enduml
 
 
-@startuml seq_user-create.svg
+@startuml seq_user-create.png
 
 title Creating a user account
 
@@ -101,9 +101,9 @@ Controller -> Account: Validation request
 alt Data validates
     database Database
 
-    User      --> Controller: OK
+    Account      --> Controller: OK
     Controller -> Account:    Save request
-    User       -> Database:   Save request
+    Account    -> Database:   Save request
     Database  --> Account
     Account   --> Controller: OK
     Controller -> User:       Home page with confirmation message
@@ -115,7 +115,7 @@ end
 @enduml
 
 
-@startuml seq_snippet-favourite.svg
+@startuml seq_snippet-favourite.png
 
 title Favouriting a snippet
 
@@ -141,7 +141,7 @@ Script     -> Member:     OK
 @enduml
 
 
-@startuml seq_user-authenticate.svg
+@startuml seq_user-authenticate.png
 
 title User authentication
 
@@ -165,7 +165,7 @@ end
 @enduml
 
 
-@startuml seq_snippet-search.svg
+@startuml seq_snippet-search.png
 
 title Searching for a snippet
 
