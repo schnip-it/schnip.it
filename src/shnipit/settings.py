@@ -38,10 +38,13 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "registration",
     "taggit",
     "pipeline",
     "snippets",
 )
+
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, "shnipit", "templates"),)
 
 # Werkzeug doesn"t werk zeug good on Python 3.2.
 if DEBUG and sys.version_info > (3, 2): INSTALLED_APPS += ("django_extensions",)
