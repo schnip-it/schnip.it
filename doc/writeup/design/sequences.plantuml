@@ -101,7 +101,7 @@ Controller -> Account: Validation request
 alt Data validates
     database Database
 
-    Account      --> Controller: OK
+    Account   --> Controller: OK
     Controller -> Account:    Save request
     Account    -> Database:   Save request
     Database  --> Account

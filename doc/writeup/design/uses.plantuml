@@ -1,0 +1,54 @@
+@startuml
+
+left to right direction
+
+actor User
+actor Member
+actor Admin
+
+Admin .> Member : << extends >>
+Member .> User : << extends >>
+
+Admin -- (Edit any snippet)
+Admin -- (Delete any snippet)
+Admin -- (Edit any profile)
+Admin -- (Edit any board)
+
+Member -- (Edit own board)
+Member -- (Edit own profile)
+Member -- (Create snippet)
+Member -- (Create board)
+
+User -- (View snippet)
+User -- (Search snippets)
+User -- (Browse snippets)
+
+'(Edit any board) ..> (Edit own board) : << extends >>
+'(Edit any profile) ..> (Edit own profile) : << extends >>
+'(View snippet) ..> (Browse snippets) : << extends >>
+'(Browse snippets) ..> (Search for snippets) : << extends >>
+
+(Edit any profile) .right.> (Edit own profile) : << extends >>
+(Edit any board) .right.> (Edit own board) : << extends >>
+(View snippet) .right.> (Browse snippets) : << extends >>
+(Browse snippets) .right.> (Search snippets) : << extends >>
+
+@enduml
+
+
+'User -- (Register)
+
+'Member -- (Create snippet)
+'Member - (View snippet)
+'Member - (Search for snippets)
+'Member -- (Browse snippets)
+'Member -- (Create board)
+'Member -- (Edit own board)
+'Member -- (Edit own profile)
+
+
+'Admin -- (Edit snippet)
+'Admin -- (Delete snippet)
+'Admin -- (Edit any board)
+'Admin -- (Edit any profile)
+
