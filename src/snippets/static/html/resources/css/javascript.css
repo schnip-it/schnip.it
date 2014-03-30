@@ -1,0 +1,32 @@
+#boards .snippet-box {
+	width: 169px;
+	height: 150px;
+	margin: 5px;
+	padding: 15px;
+	position: relative;
+	text-align: center;
+	border-radius: 5px;
+	vertical-align: top;
+	text-decoration: none;
+	display: inline-block;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	box-shadow: 0px 1px 0px #ccc;
+	background: #f1f1f1;
+}
+
+#boards .snippet-box header {
+	border-bottom: 1px solid #e6e6e6;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#boards .snippet-box h3 {
+	font-size: 18px;
+}
+
+.clear {
+	clear: both;
+}

@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=McLaren);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import url(lang-brushes.css);
+
+body {
+	background-color: #e6e6e6;
+}
+
+.content {
+	width: 980px;
+	margin: auto;
+}
+
+.page-title {
+	padding: 10px 0 5px;
+}
+
+#boards ul {
+	width: 900px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+
+#boards ul::after {
+	clear: both;
+	content: ",";
+	display: block;
+	visibility: hidden;
+}
+
+#boards ul li {
+	float: left;
+}
+
+#boards ul li h3 {
+	color: #555;
+	font-family: 'Source Sans Pro', cursive, sans-serif;
+}
+
+#boards ul li header span {
+	color: #888;
+	font-size: 10px;
+	margin: 2px 8px 3px 8px;
+}
+
+#boards ul li .lang {
+	float: left;
+}
+
+#boards ul li .count {
+	float: right;
+}
