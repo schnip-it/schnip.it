@@ -24,7 +24,7 @@ SECRET_KEY = "sdu8tc90f=tcpb0jvhyh@j019=(0h(ljmlmlpt#cp)f9t(jp9z"
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = False
 TEMPLATE_DEBUG = False
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "snippet.twey.co.uk"]
 
 
 # Application definition
