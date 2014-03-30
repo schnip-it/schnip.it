@@ -23,9 +23,7 @@ SECRET_KEY = "sdu8tc90f=tcpb0jvhyh@j019=(0h(ljmlmlpt#cp)f9t(jp9z"
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = False
-
 TEMPLATE_DEBUG = False
-
 ALLOWED_HOSTS = []
 
 
@@ -38,13 +36,27 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "registration",
+    "account",
+    "profiles",
+    "bootstrapform",
+    "pinax_theme_bootstrap",
     "taggit",
     "pipeline",
     "snippets",
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "shnipit", "templates"),)
+
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                               "django.core.context_processors.debug",
+                               "django.core.context_processors.i18n",
+                               "django.core.context_processors.media",
+                               "django.core.context_processors.static",
+                               "django.core.context_processors.tz",
+                               "django.core.context_processors.request",
+                               "django.contrib.messages.context_processors.messages",
+                               "account.context_processors.account",
+                               "pinax_theme_bootstrap.context_processors.theme")
 
 # Werkzeug doesn"t werk zeug good on Python 3.2.
 if DEBUG and sys.version_info > (3, 2): INSTALLED_APPS += ("django_extensions",)
@@ -54,7 +66,9 @@ MIDDLEWARE_CLASSES = ("django.contrib.sessions.middleware.SessionMiddleware",
                       "django.middleware.csrf.CsrfViewMiddleware",
                       "django.contrib.auth.middleware.AuthenticationMiddleware",
                       "django.contrib.messages.middleware.MessageMiddleware",
-                      "django.middleware.clickjacking.XFrameOptionsMiddleware",)
+                      "django.middleware.clickjacking.XFrameOptionsMiddleware",
+                      "account.middleware.LocaleMiddleware",
+                      "account.middleware.TimezoneMiddleware")
 
 ROOT_URLCONF = "shnipit.urls"
 

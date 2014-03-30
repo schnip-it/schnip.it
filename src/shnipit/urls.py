@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 
+from profiles.views import ProfileSettingsView
+
 from django.contrib import admin
 admin.autodiscover()
 
@@ -9,6 +11,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^user/', include('registration.backends.simple.urls')),
-    url(r'^$', include('snippets.urls')),
+    url(r'^account/', include('account.urls')),
+    url(r'^', include('snippets.urls')),
 )
