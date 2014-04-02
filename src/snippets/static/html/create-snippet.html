@@ -9,12 +9,14 @@
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/css/main.css">
+		<link rel="stylesheet" href="resources/css/create-snippet.css">
 
 	</head>
 	
 	<body>
 	
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		      <span class="sr-only">Toggle navigation</span>
@@ -63,6 +65,35 @@
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>
+
+
+		<div class="content">
+		
+			<h2 class="page-title">Create Snippet</h2>
+			
+			<section class="edit-snippet">
+				<form id="create-snippet">
+					<header class="edit-snippet-header">
+						<input class="input-lang" type="text" name="lang" placeholder="Language">
+						<input class="input-title" type="text" name="title" placeholder="The title for your snippet">
+						<input class="input-keys" type="text" name="keys" placeholder="key, words">
+					</header>
+					<div class="clear"></div>
+					<!-- &#013;&#010; -->
+					<div class="edit-snippet-body">
+						<textarea class="textarea-comment" placeholder="Write the description for your snippet here"></textarea>
+						<textarea class="textarea-body" placeholder="This will be the body of your snippet"></textarea>
+					
+						
+						<button class="semi-circle" href="#"><h3>Submit</h3></button>
+					</div>
+					
+					
+
+				</form>
+			</section>
+			
+		</div>
 	
 		<!-- JS and analytics only. -->
     <!-- Bootstrap core JavaScript

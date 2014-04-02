@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>	
 	<head>
 
@@ -15,6 +16,24 @@
 	</head>
 	
 	<body>
+	
+	<!-- 
+		
+		This is an example page for all boards, both public and private
+		- Check Access Rights for Private Boards
+			- Display error if unauthorised
+		- Display snippet-add box
+		- Display list of snippets for the board
+			- For each snippet:
+				- Do some way of opening a specific snippet using the snippet.html
+					- (I can't be more specific cause I don't know how it's done in Django)
+					- (But to try and explain I'll use PHP, so for example snippet.html?id=1212)
+				- Find the left lang class, and add the abbreviation of the language (eg "left lang js")
+				- Count the upvotes and downvotes, then let score = upvotes - downvotes
+				- The score goes in the right count likes span
+				- Put the title of the snippet into the <h3> </h3> tag
+		
+	-->
 	
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="navbar-header">
@@ -75,9 +94,17 @@
 				
 					<li>
 						<a href="snippet.html" class="snippet-box">
+							<div class="snippet-add">
+								<span class="glyphicon glyphicon-plus"></span>
+							</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="snippet.html" class="snippet-box">
 							<header>
-								<span class="lang js">JS</span>
-								<span class="count likes">3</span>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">3</span>
 							</header>
 							<h3>Do some javascript</h3>						
 						</a>
@@ -86,8 +113,8 @@
 					<li>
 						<a href="#" class="snippet-box">
 							<header>
-								<span class="lang js">JS</span>
-								<span class="count likes">1</span>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">1</span>
 							</header>
 							<h3>Here's more javascript</h3>						
 						</a>
@@ -96,8 +123,8 @@
 					<li>
 						<a href="#" class="snippet-box">
 							<header>
-								<span class="lang js">JS</span>
-								<span class="count likes">4,021</span>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">4,021</span>
 							</header>
 							<h3>Lots more things to do with javascript</h3>						
 						</a>

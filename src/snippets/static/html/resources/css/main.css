@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=McLaren);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:300);
 @import url(lang-brushes.css);
 
 body {
@@ -33,9 +34,21 @@ body {
 	float: left;
 }
 
-#boards ul li h3 {
+#boards ul li a:link, #boards ul li a:visited, #boards ul li a:hover, #boards ul li a:active {
 	color: #555;
-	font-family: 'Source Sans Pro', cursive, sans-serif;
+	text-decoration: none;
+}
+
+#boards header {
+	border-bottom: 1px solid #e6e6e6;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#boards ul li h3 {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
 
 #boards ul li header span {
@@ -44,10 +57,26 @@ body {
 	margin: 2px 8px 3px 8px;
 }
 
-#boards ul li .lang {
+#boards ul li p {
+	margin-bottom: 0;
+	text-align: left;
+}
+
+#boards ul li .snippet-add {
+	font-size: 65px;
+	line-height: 120px;
+	color: #aaa;
+	text-shadow: 1px 1px 1px #777;
+}
+
+#boards ul li .left {
 	float: left;
 }
 
-#boards ul li .count {
+#boards ul li .right {
 	float: right;
+}
+
+.clear {
+	clear: both;
 }

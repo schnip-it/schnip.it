@@ -15,14 +15,6 @@
 	background: #f1f1f1;
 }
 
-#boards .snippet-box header {
-	border-bottom: 1px solid #e6e6e6;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: 0;
-}
-
 #boards .snippet-box h3 {
 	font-size: 18px;
 }
