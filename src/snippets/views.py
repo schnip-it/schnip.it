@@ -47,21 +47,15 @@ class BoardList(generic.ListView):
 class BoardCreate(generic.edit.CreateView):
     model = Board
 
-class BoardDetail(generic.DetailView):
+class ListDetailView(generic.DetailView, generic.ListView):
+    def get_queryset(self):
+        return self.object.snippets.all()
+    
+class BoardDetail(ListDetailView):
     model = Board
     paginate_by = 60
+    context_object_name = "snippets"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        paginator = Paginator(self.object.snippets.all(), self.paginate_by)
-        
-        try:
-            page = paginator.page(self.request.GET.get("page"))
-        except PageNotAnInteger:
-            page = paginator.page(1)
-        except EmptyPage:
-            page = paginator.page(paginator.num_pages)
-
-        context["snippets"] = page
-        return context
+    def get_queryset(self):
+        return self.object.snippets.all()
         
