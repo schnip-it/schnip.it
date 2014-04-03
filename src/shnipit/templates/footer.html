@@ -1,7 +1,7 @@
 <footer>
   <ul>
-    <li><a href="{% url 'shnipit.views.privacy' %}">Privacy Policy</a></li>
-    <li><a href="{% url 'shnipit.views.contact' %}">Contact Us</a></li>
+    <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+    <li><a href="{% url 'contact' %}">Contact Us</a></li>
   </ul>
 
   {% if user.is_authenticated %}
