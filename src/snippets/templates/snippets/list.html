@@ -1,0 +1,15 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}
+  List Snippets
+{% endblock %}
+
+{% block body %}
+  <h1>Snippets</h1>
+
+  <ul>
+  {% for snippet in snippets %}
+    <li>{{ }}</li>
+  {% endfor %}
+  </ul>
+{% endblock body %}

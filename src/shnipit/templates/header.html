@@ -1,0 +1,20 @@
+<header>
+  <a href="{% url 'shnipit.views.home' %}">Home</a>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'board_list' %}">Boards</a></li>
+      <li><a href="{% url 'snippet_create' %}">Create</a></li>
+      <li><a href="{% url 'shnipit.views.help' %}">Help</a></li>
+      <li><a href="{% url 'shnipit.views.about' %}">About</a></li>
+    </ul>
+  </nav>
+
+  {% if user.is_authenticated %}
+    <p>You are logged in as {{ user.username }}
+      (<a href="{% url 'account_logout' %}">logout</a>)</p>
+    <img src="{{ user.profile.avatar.url }}">
+  {% else %}
+    <p><a href="{% url 'account_login' %}">Log in</a></p>
+  {% endif %}
+</header>

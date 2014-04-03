@@ -6,9 +6,11 @@
   </head>
 
   <body>
+    {% include "header.html" %}
     <div class="content">
       {% block body %}{% endblock %}
     </div>
+    {% include "footer.html" %}
 
     {% block extrascript %}{% endblock %}
   </body>

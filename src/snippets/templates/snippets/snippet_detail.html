@@ -1,0 +1,11 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}
+  {{ snippet.title }}
+{% endblock %}
+
+{% block body %}
+  <h1>{{ snippet.title }}</h1>
+
+  <code class="language-{{ snippet.language }}">{{ snippet.code }}</code>
+{% endblock body %}
