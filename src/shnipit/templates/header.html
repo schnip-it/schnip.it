@@ -1,6 +1,11 @@
 <header>
   <a href="{% url 'shnipit.views.home' %}">Home</a>
 
+  <form action="{% url 'snippet_list' %}" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+  </form>
+
   <nav>
     <ul>
       <li><a href="{% url 'board_list' %}">Boards</a></li>

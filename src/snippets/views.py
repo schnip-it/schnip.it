@@ -5,8 +5,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Snippet, Board
 
-# TODO add templates
-
 class SnippetList(generic.ListView):
     model = Snippet
     context_object_name = "snippets"
@@ -19,6 +17,13 @@ class SnippetList(generic.ListView):
             r = r.filter(description__icontains=self.request.GET["q"])
             
         return r.order_by("-creation_time")
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        print (context)
+
+        return context
 
 class SnippetCreate(generic.edit.CreateView):
     model = Snippet

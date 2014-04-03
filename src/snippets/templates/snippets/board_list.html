@@ -12,4 +12,6 @@
       <li><a href="{{ board.get_absolute_url }}">{{ board.name }}</a></li>
     {% endfor %}
   </ul>
+
+  {% include "snippets/pagination.html" with page = boards %}
 {% endblock body %}
