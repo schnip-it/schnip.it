@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>	
+	<head>
+
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Shnip.it - Efficient Cross-Project Snippet Reuse Tool</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/css/main.css">
+		<link rel="stylesheet" href="resources/css/javascript.css">
+
+	</head>
+	
+	<body>
+	
+	<!-- 
+		
+		This is an example page for all boards, both public and private
+		- Check Access Rights for Private Boards
+			- Display error if unauthorised
+		- Display snippet-add box
+		- Display list of snippets for the board
+			- For each snippet:
+				- Do some way of opening a specific snippet using the snippet.html
+					- (I can't be more specific cause I don't know how it's done in Django)
+					- (But to try and explain I'll use PHP, so for example snippet.html?id=1212)
+				- Find the left lang class, and add the abbreviation of the language (eg "left lang js")
+				- Count the upvotes and downvotes, then let score = upvotes - downvotes
+				- The score goes in the right count likes span
+				- Put the title of the snippet into the <h3> </h3> tag
+		
+	-->
+	
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		      <span class="sr-only">Toggle navigation</span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#">Shnip.it</a>
+		  </div>
+		  
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href="#">Link</a></li>
+		      <li><a href="#">Link</a></li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">One more separated link</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		    <form class="navbar-form navbar-left" role="search">
+		      <div class="form-group">
+		        <input type="text" class="form-control" placeholder="Search">
+		      </div>
+		      <button type="submit" class="btn btn-default">Submit</button>
+		    </form>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="#">Link</a></li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+		
+		<div class="content">
+		
+			<h2 class="page-title">Public Boards - Javascript</h2>
+		
+			<section id="boards">
+				<ul class="board-list">
+				
+					<li>
+						<a href="snippet.html" class="snippet-box">
+							<div class="snippet-add">
+								<span class="glyphicon glyphicon-plus"></span>
+							</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="snippet.html" class="snippet-box">
+							<header>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">3</span>
+							</header>
+							<h3>Do some javascript</h3>						
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="snippet-box">
+							<header>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">1</span>
+							</header>
+							<h3>Here's more javascript</h3>						
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="snippet-box">
+							<header>
+								<span class="left lang js">JS</span>
+								<span class="right count likes">4,021</span>
+							</header>
+							<h3>Lots more things to do with javascript</h3>						
+						</a>
+					</li>
+					
+				</ul>
+			<div class="clear"></div>
+			</section>
+		
+		</div>
+		
+		<!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>

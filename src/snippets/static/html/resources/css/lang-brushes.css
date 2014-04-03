@@ -1,0 +1,59 @@
+.lang {
+	padding: 2px 6px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Source Sans Pro', cursive, sans-serif;
+	line-height: 1;
+}
+
+.lang.js {
+	color: #fff !important;
+	background-color: #f7977a;
+}
+
+.lang.cs {
+	color: #fff !important;
+	background-color: #fdc68a;
+}
+
+.lang.one {
+	color: #888 !important;
+	background-color: #fff79a;
+	
+}
+.lang.two {
+	color: #fff !important;
+	background-color: #a2d39c;
+	
+}
+.lang.three {
+	color: #fff !important;
+	background-color: #6ecff6;
+	
+}
+.lang.four {
+	color: #fff !important;
+	background-color: #8493ca;
+	
+}
+.lang.five {
+	color: #fff !important;
+	background-color: #bc8dbf;
+	
+}
+.lang.six {
+	color: #fff !important;
+	background-color: #f6989d;
+	
+}
+
+.lang.php {
+	
+}
+
+.lang {
+	/* This will be the default for any languages we haven't specified */
+	color: #FFF !important;
+	background-color: #000;
+}
