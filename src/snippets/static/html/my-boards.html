@@ -9,12 +9,14 @@
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/css/main.css">
+		<link rel="stylesheet" href="resources/css/my-boards.css">
 
 	</head>
 	
 	<body>
 	
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		      <span class="sr-only">Toggle navigation</span>
@@ -63,13 +65,52 @@
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>
-	
+		
+		<div class="content">
+		
+			<h2 class="page-title">My Boards</h2>
+		
+			<section id="boards">
+				<ul class="board-list">
+					
+					<li>
+						<a href="create-board.html" class="board-box">
+							<div class="box-add">
+								<span class="glyphicon glyphicon-plus"></span>
+							</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="javascript.html" class="board-box">
+							<header>
+								<span class="left count snippets">3</span>
+							</header>
+							<h3>My First Board</h3>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#" class="board-box">
+							<header>
+								<span class="left count snippets">0</span>
+							</header>
+							<h3>Second</h3>						
+						</a>
+					</li>
+				</ul>
+			<div class="clear"></div>
+			</section>
+		
+		</div>
+		
 		<!-- JS and analytics only. -->
     <!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+		
 	
 	</body>
 </html>

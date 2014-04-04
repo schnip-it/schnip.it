@@ -9,6 +9,8 @@
 
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/css/main.css">
+		<link rel="stylesheet" href="resources/css/create-board.css">
 
 	</head>
 	
@@ -63,6 +65,35 @@
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>
+		
+		<div class="content">
+		
+			<h2 class="page-title">Create Board</h2>
+			
+			<section class="edit-board">
+				<form id="create-board">
+					<header class="edit-board-header">
+						<input class="input-title" type="text" name="title" placeholder="Board Title">
+					</header>
+					<div class="clear"></div>
+					<!-- &#013;&#010; -->
+					<div class="edit-board-body">
+						<textarea class="textarea-desc" placeholder="Description of Board"></textarea>
+						<select class="dropdown-privacy">
+							<option value="private">Private</option>
+							<option value="public">Public</option>
+						</select>
+						<textarea class="textarea-users" placeholder="Enter, Emails, Here"></textarea>
+						
+						<button name="save" type="submit" class="save-button">Create Board</button>
+						
+					<div class="clear"></div>
+					</div>
+					
+				</form>
+			</section>
+			
+		</div>
 	
 		<!-- JS and analytics only. -->
     <!-- Bootstrap core JavaScript
