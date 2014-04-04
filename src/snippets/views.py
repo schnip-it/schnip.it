@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Snippet, Board
+from .forms import BoardForm
 
 class SnippetList(generic.ListView):
     model = Snippet
@@ -24,7 +25,7 @@ class SnippetList(generic.ListView):
 class SnippetCreate(generic.edit.CreateView):
     model = Snippet
     fields = ["title", "description", "language", "tags", "board", "code"]
-
+    
 class SnippetDetail(generic.DetailView):
     model = Snippet
 
@@ -43,6 +44,7 @@ class BoardList(generic.ListView):
     
 class BoardCreate(generic.edit.CreateView):
     model = Board
+    form_class = BoardForm
         
 class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     paginate_by = 60

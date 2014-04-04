@@ -13,5 +13,7 @@
     {% endfor %}
   </ul>
 
+  <a href="{% url 'board_create' %}">Create new board</a>
+
   {% include "snippets/pagination.html" with page=boards %}
 {% endblock body %}

@@ -20,6 +20,10 @@
       (<a href="{% url 'account_logout' %}">logout</a>)</p>
     <img src="{{ user.profile.avatar.url }}">
   {% else %}
-    <p><a href="{% url 'account_login' %}">Log in</a></p>
+    <p>
+      <a href="{% url 'account_login' %}">Log in</a>
+      /
+      <a href="{% url 'account_signup' %}">Register</a>
+    </p>
   {% endif %}
 </header>
