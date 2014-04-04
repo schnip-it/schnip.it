@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from taggit.managers import TaggableManager
+from shnipit.settings import SNIPPET_LANGUAGES
 
 class Board(models.Model):
     name = models.CharField(max_length=255)
@@ -22,7 +23,7 @@ class Snippet(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     board = models.ForeignKey(Board, related_name="snippets")
-    language = models.CharField(max_length=255)
+    language = models.CharField(max_length=255, choices=SNIPPET_LANGUAGES)
     code = models.TextField()
     tags = TaggableManager()
 

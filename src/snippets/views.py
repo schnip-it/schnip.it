@@ -23,6 +23,7 @@ class SnippetList(generic.ListView):
 
 class SnippetCreate(generic.edit.CreateView):
     model = Snippet
+    fields = ["title", "description", "language", "tags", "board", "code"]
 
 class SnippetDetail(generic.DetailView):
     model = Snippet

@@ -107,3 +107,6 @@ MEDIA_URL = "/static/media/"
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (MEDIA_ROOT,)
+
+# snippets settings
+SNIPPET_LANGUAGES = (("php", "PHP"), )
