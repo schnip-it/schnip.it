@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{% block head_title %}shnip.it{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
   </head>
 
   <body>
@@ -12,6 +13,6 @@
     </div>
     {% include "footer.html" %}
 
-    {% block extrascript %}{% endblock %}
+    {% block extra_script %}{% endblock %}
   </body>
 </html>
