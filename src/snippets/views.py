@@ -19,11 +19,7 @@ class SnippetList(generic.ListView):
         return r.order_by("-creation_time")
 
     def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-
-        print (context)
-
-        return context
+        return super().get_context_data(*args, **kwargs)
 
 class SnippetCreate(generic.edit.CreateView):
     model = Snippet
@@ -46,22 +42,20 @@ class BoardList(generic.ListView):
     
 class BoardCreate(generic.edit.CreateView):
     model = Board
-
-class BoardDetail(generic.DetailView):
-    model = Board
+        
+class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     paginate_by = 60
+    template_name = "snippets/board_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object(queryset=Board.objects.all())
+        return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        paginator = Paginator(self.object.snippets.all(), self.paginate_by)
-        
-        try:
-            page = paginator.page(self.request.GET.get("page"))
-        except PageNotAnInteger:
-            page = paginator.page(1)
-        except EmptyPage:
-            page = paginator.page(paginator.num_pages)
-
-        context["snippets"] = page
+        context["snippets"] = self.object_list
         return context
-        
+
+    def get_queryset(self):
+        return self.object.snippets.all()
+
