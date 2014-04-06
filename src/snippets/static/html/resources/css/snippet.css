@@ -7,14 +7,14 @@
 	height:44px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background: linear-gradient(to bottom, #bbb 0%, #acacac 100%);
+	color: #3a3a3a;
 }
 
 .edit-snippet-header .input-lang {
 	float: left;
 	width: 100px;
 	font-size: 12px;
-	margin: 8px 10px 0 10px;
+	margin: 12px 10px 0 10px;
 }
 
 .edit-snippet-header .input-title {
@@ -22,7 +22,7 @@
 	width: 380px;
 	text-align: center;
 	font-size: 17px;
-	margin: 5px 10px 0 100px;
+	margin: 9px 10px 0 100px;
 }
 
 .edit-snippet-header .input-keys {
@@ -30,7 +30,7 @@
 	width: 180px;
 	text-align: right;
 	font-size: 14px;
-	margin: 6px 10px 0 5px;
+	margin: 10px 10px 0 5px;
 }
 
 .edit-snippet-header input {
@@ -43,7 +43,7 @@
 .edit-snippet-body {
 	border: 1px solid #ccc;
 	border-top: 0;
-	background: linear-gradient(to bottom, #ccc 0%, #aaa 100%);
+	background: #f1f1f1;
 	margin-bottom: 50px;
 }
 
@@ -58,10 +58,40 @@
 
 .edit-snippet-body .textarea-comment {
 	font-style: italic;
-	min-height:70px;
+	min-height:90px;
 	color: #888;
 	font-family: 'Source Code Pro', Consolas, Monaco, "Andale Mono", monospace;
 	height: auto;
+	width: 800px;
+	float: left;
+}
+
+.functions-right {
+	float: left;
+	border-bottom-left-radius: 5px;
+}
+
+.functions-square {
+	text-align: center;
+	font-size: 30px;
+	width: 49px;
+	height: 46px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.functions-square a {
+	color: #333;
+	text-decoration: none;
+}
+
+.functions-square a:hover {
+	color: #666;
+}
+
+.function-star.fav-on {
+	color: #fff700;
 }
 
 .edit-snippet-body .textarea-body {

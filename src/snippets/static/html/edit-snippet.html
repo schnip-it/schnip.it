@@ -10,7 +10,7 @@
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="resources/css/main.css">
-		<link rel="stylesheet" href="resources/css/snippet.css">
+		<link rel="stylesheet" href="resources/css/create-snippet.css">
 
 	</head>
 	
@@ -69,28 +69,31 @@
 
 		<div class="content">
 		
-			<h2 class="page-title">View Snippet</h2>
+			<h2 class="page-title">Edit Snippet</h2>
 			
 			<section class="edit-snippet">
-					<header class="edit-snippet-header green">
-						<div class="input-lang">Language</div>
-						<div class="input-title"> The Title of your Snippet</div>
-						<div class="input-keys">Key, Words</div>
+				<form id="create-snippet">
+					<header class="edit-snippet-header">
+						<select class="select-lang">
+							<option value="js">Javascript</option>
+							<option value="css">CSS</option>
+						</select>
+						<input class="input-title" type="text" name="title" placeholder="The title for your snippet" value="This is my first Snippet!">
+						<input class="input-keys" type="text" name="keys" placeholder="first, snippet">
 					</header>
 					<div class="clear"></div>
 					<!-- &#013;&#010; -->
 					<div class="edit-snippet-body">
-						<pre class="textarea-comment">/*&#013;&#010; * All lines here need to be prefixed by  *&#013;&#010; * And there must be a blank line above and below the section for the /* and */&#013;&#010; */</pre>
-						<div class="functions-right panel-green">
-							<div class="functions-square"><a href="edit-snippet.html"><span class="glyphicon glyphicon-edit"></span></a></div>
-							<div class="functions-square"><a href="#"><span class="function-save glyphicon glyphicon-save"></span></a></div>
-							<div class="clear"></div>
-							<div class="functions-square"><a href="#"><span class="function-trash glyphicon glyphicon-trash"></span></a></div>
-							<div class="functions-square"><a href="#"><span class="function-star glyphicon glyphicon-star"></span></a></div>
-						</div>
-						<div class="clear"></div>
-						<pre class="textarea-body">Test&#013;&#010;Here's some code&#013;&#010;&#013;&#010;// A comment&#013;&#010;Time for a test!&#013;&#010;&#013;&#010;So here's a long line of text to test how the line wrapping would work if someone typed a very long line of code into the box</pre>
+						<textarea class="textarea-comment" placeholder="Write the description for your snippet here">This is my first snippet for the IP</textarea>
+						<textarea class="textarea-body" placeholder="This will be the body of your snippet">Here is some snippet text!</textarea>
+					
+						
+						<button class="semi-circle" href="#"><h3>Save</h3></button>
 					</div>
+					
+					
+
+				</form>
 			</section>
 			
 		</div>
@@ -101,28 +104,6 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-		<script>
-		$(document).ready(function() {
-
-	    $('.function-save').click(function() {
-	      alert("Snippet saved");
-	    });
-	    $('.function-trash').click(function() {
-	      if (confirm('Are you sure you want to delete this snippet?')) {
-		      // do delete item
-      	}
-	    });
-	    $('.function-star').click(function() {
-	    	if ($(this).hasClass("fav-on")) {
-	    		alert("Snippet un-favourited");
-	    		$(this).removeClass("fav-on");
-		    } else {
-					alert("Snippet favourited");
-					$(this).addClass("fav-on");
-		    }
-	    });
-	  });
-		</script>
 	
 	</body>
 </html>

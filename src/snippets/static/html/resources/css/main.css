@@ -72,6 +72,10 @@ body {
 	text-align: left;
 }
 
+#boards ul li {
+	position: relative;
+}
+
 #boards ul li .box-add {
 	font-size: 65px;
 	line-height: 120px;
@@ -120,6 +124,10 @@ button.green {
 	background: linear-gradient(to bottom, #9dcc4f 0%, #a6da52 100%);
 	border-radius: 5px;
 	border: 1px solid #A0CD4F;
+}
+
+.panel-green {
+	background-color: #a6da52;
 }
 
 input.green {
