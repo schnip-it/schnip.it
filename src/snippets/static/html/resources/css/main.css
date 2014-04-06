@@ -12,6 +12,16 @@ body {
 	margin: auto;
 }
 
+.content.thin {
+	width: 600px;
+	margin: auto;
+}
+
+.content.very-thin {
+	width: 400px;
+	margin: auto;
+}
+
 .page-title {
 	padding: 10px 0 5px;
 }
@@ -62,7 +72,7 @@ body {
 	text-align: left;
 }
 
-#boards ul li .snippet-add {
+#boards ul li .box-add {
 	font-size: 65px;
 	line-height: 120px;
 	color: #aaa;
@@ -79,4 +89,53 @@ body {
 
 .clear {
 	clear: both;
+}
+
+ul.no-bullet {
+	list-style: none;
+}
+
+header.green {
+	height:44px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: linear-gradient(to bottom, #9dcc4f 0%, #a6da52 100%);
+	text-align: center;
+}
+
+header.green h3 {
+	color: #fff;
+	padding-top: 6px;
+}
+
+header.green h3 small {
+	color: #fff;
+	padding-top: 6px;
+}
+
+button.green {
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+	background: linear-gradient(to bottom, #9dcc4f 0%, #a6da52 100%);
+	border-radius: 5px;
+	border: 1px solid #A0CD4F;
+}
+
+input.green {
+	background-color: #e8e8e8;
+	color: #888;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+	padding: 5px 10px;
+}
+
+.green.panel-body {
+	border: 1px solid #ccc;
+	border-top: 0;
+	background: #f1f1f1;
+	margin-bottom: 50px;
+	padding: 20px;
 }
