@@ -3,11 +3,15 @@
 	margin: 0 auto;
 }
 
+.edit-snippet-header {
+	color: #333;
+}
+
 .edit-snippet-header .input-lang {
 	float: left;
 	font-size: 12px;
 	margin: 12px 10px 0 10px;
-	background-color: #bde67c;
+	background-color: #84c1e9;
 	border-radius: 5px;
 	padding: 1px 6px;
 }
@@ -59,7 +63,7 @@
 .user-image {
 	border-radius: 100px;
 	overflow: hidden;
-	border: 5px solid #8ebd40;
+	border: 5px solid #4aa1db;
 	box-shadow: 0px 3px 0px #DFDFDF;
 	float: right;
 	vertical-align: top;
@@ -108,12 +112,12 @@
 }
 
 .functions-square a {
-	color: #333;
+	color: #fff;
 	text-decoration: none;
 }
 
 .functions-square a:hover {
-	color: #666;
+	color: #bbb;
 }
 
 .function-star.fav-on {
