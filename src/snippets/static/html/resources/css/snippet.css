@@ -3,18 +3,13 @@
 	margin: 0 auto;
 }
 
-.edit-snippet-header {
-	height:44px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	color: #3a3a3a;
-}
-
 .edit-snippet-header .input-lang {
 	float: left;
-	width: 100px;
 	font-size: 12px;
 	margin: 12px 10px 0 10px;
+	background-color: #bde67c;
+	border-radius: 5px;
+	padding: 1px 6px;
 }
 
 .edit-snippet-header .input-title {
@@ -22,7 +17,7 @@
 	width: 380px;
 	text-align: center;
 	font-size: 17px;
-	margin: 9px 10px 0 100px;
+	margin: 9px 10px 0 155px;
 }
 
 .edit-snippet-header .input-keys {
@@ -38,6 +33,37 @@
 	border-radius: 5px;
 	color: #333;
 	padding: 4px 10px;
+}
+
+.header-left {
+	float: left;
+	width: 400px;
+}
+
+.header-right {
+	margin: 15px 42px 0 0;
+	float: right;
+	display: inline;
+	width: 400px;
+	height: 120px;
+}
+
+.header-right ul {
+	display: inline-block;
+	vertical-align: top;
+	list-style: none;
+	margin-left: 20px;
+	text-align: right;
+}
+
+.user-image {
+	border-radius: 100px;
+	overflow: hidden;
+	border: 5px solid #8ebd40;
+	box-shadow: 0px 3px 0px #DFDFDF;
+	float: right;
+	vertical-align: top;
+	display: block;
 }
 
 .edit-snippet-body {
