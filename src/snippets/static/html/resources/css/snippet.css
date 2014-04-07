@@ -125,6 +125,7 @@
 }
 
 .edit-snippet-body .textarea-body {
+	font-size: 15px !important;
 	min-height:350px;
 	overflow: scroll;
 	color: #111;
