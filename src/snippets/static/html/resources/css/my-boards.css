@@ -14,3 +14,17 @@
 	box-shadow: 0px 1px 0px #ccc;
 	background: #f1f1f1;
 }
+
+.top-right-glyph-one, .top-right-glyph-two {
+	position: absolute;
+}
+
+.top-right-glyph-one {
+	right: 32px;
+	top: 6px;
+}
+
+.top-right-glyph-two {
+	right: 13px;
+	top: 6px;
+}

@@ -10,13 +10,13 @@
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="resources/css/main.css">
-		<link rel="stylesheet" href="resources/css/snippet.css">
+		<link rel="stylesheet" href="resources/css/create-board.css">
 
 	</head>
 	
 	<body>
 	
-		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<nav class="navbar navbar-default" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		      <span class="sr-only">Toggle navigation</span>
@@ -65,49 +65,32 @@
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>
-
-
+		
 		<div class="content">
 		
-			<div class="header-left"><h2 class="page-title">View Snippet</h2></div>
+			<h2 class="page-title">Edit Board</h2>
 			
-			<div class="header-right">
-				<ul>
-					<li>
-						<h4><small>Snippet by</small> Jamie Warburton</h4> 
-					</li>
-					<li>
-						<h5>CS Student</h5>
-					</li>
-					<li>
-						<h5>University of Bath</h5>
-					</li>
-				</ul>
-				<div class="user-image"><img src="http://jamiewarburton.com/images/jamie.jpg" width="100" height="100"></div>
-			</div>
-			
-			<div class="clear"></div>
-			
-			<section class="edit-snippet">
-					<header class="edit-snippet-header blue">
-						<div class="input-lang">JS</div>
-						<div class="input-title"> The Title of your Snippet</div>
-						<div class="input-keys">Key, Words</div>
+			<section class="edit-board">
+				<form id="create-board">
+					<header class="edit-board-header blue">
+						<input class="input-title" type="text" name="title" placeholder="Board Title" value="My First Board">
 					</header>
 					<div class="clear"></div>
 					<!-- &#013;&#010; -->
-					<div class="edit-snippet-body">
-						<pre class="textarea-comment">/*&#013;&#010; * All lines here need to be prefixed by  *&#013;&#010; * And there must be a blank line above and below the section for the /* and */&#013;&#010; */</pre>
-						<div class="functions-right panel-blue">
-							<div class="functions-square"><a href="edit-snippet.html"><span class="glyphicon glyphicon-edit"></span></a></div>
-							<div class="functions-square"><a href="#"><span class="function-save glyphicon glyphicon-save"></span></a></div>
-							<div class="clear"></div>
-							<div class="functions-square"><a href="#"><span class="function-trash glyphicon glyphicon-trash"></span></a></div>
-							<div class="functions-square"><a href="#"><span class="function-star glyphicon glyphicon-star"></span></a></div>
-						</div>
-						<div class="clear"></div>
-						<pre class="textarea-body">Test&#013;&#010;Here's some code&#013;&#010;&#013;&#010;// A comment&#013;&#010;Time for a test!&#013;&#010;&#013;&#010;So here's a long line of text to test how the line wrapping would work if someone typed a very long line of code into the box</pre>
+					<div class="edit-board-body">
+						<textarea class="textarea-desc" placeholder="Description of Board">This is my first board to hold all of my IP snippets</textarea>
+						<select class="dropdown-privacy">
+							<option value="private">Private</option>
+							<option value="public">Public</option>
+						</select>
+						<textarea class="textarea-users" placeholder="Enter, Emails, Here">jamiewarburton@live.co.uk, otheremail@here.com</textarea>
+						
+						<button name="edit-board" type="submit" class="save-button blue">Edit Board</button>
+						
+					<div class="clear"></div>
 					</div>
+					
+				</form>
 			</section>
 			
 		</div>
@@ -118,28 +101,6 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-		<script>
-		$(document).ready(function() {
-
-	    $('.function-save').click(function() {
-	      alert("Snippet saved");
-	    });
-	    $('.function-trash').click(function() {
-	      if (confirm('Are you sure you want to delete this snippet?')) {
-		      // do delete item
-      	}
-	    });
-	    $('.function-star').click(function() {
-	    	if ($(this).hasClass("fav-on")) {
-	    		alert("Snippet un-favourited");
-	    		$(this).removeClass("fav-on");
-		    } else {
-					alert("Snippet favourited");
-					$(this).addClass("fav-on");
-		    }
-	    });
-	  });
-		</script>
 	
 	</body>
 </html>
