@@ -107,6 +107,7 @@ MEDIA_URL = "/static/media/"
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (MEDIA_ROOT,)
+STATIC_ROOT = os.path.join(BASE_DIR, "..", "static")
 
 # snippets settings
 SNIPPET_LANGUAGES = (("php", "PHP"), )
