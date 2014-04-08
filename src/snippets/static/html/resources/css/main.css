@@ -21,6 +21,7 @@
 
 
 body {
+	/*padding-top: 75px;*/ /* Enable this when going on main site */
 	background-color: #ddd;
 }
 
@@ -33,6 +34,11 @@ body {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+}
+
+.navbar-brand {
+	font-family: 'McLaren', cursive;
+	width: 90px;
 }
 
 .dropdown-menu>li>a, .dropdown-menu {

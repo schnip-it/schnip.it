@@ -3,6 +3,22 @@
 	margin: 0 auto;
 }
 
+a.user-link {
+	color: inherit;
+}
+
+a.user-link:hover {
+	color: #f6f6f6;
+}
+
+a.user-link:hover > .header-right {
+	background-color: #4aa1db;
+}
+
+a.user-link:hover > .header-right .info-container h4 small {
+	color: #4aa1db !important;
+}
+
 .edit-snippet-header {
 	color: #333;
 }
