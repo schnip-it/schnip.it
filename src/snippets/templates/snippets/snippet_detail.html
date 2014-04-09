@@ -7,5 +7,22 @@
 {% block body %}
   <h1>{{ snippet.title }}</h1>
 
+  <form action="{% url 'snippet_rate' pk=snippet.pk %}" method="post">
+    {% csrf_token %}
+
+    <p>Average rating: {{ snippet.get_mean_rating }}</p>
+
+    <ul>
+    {% for rating in snippet.ratings.all %}
+      <li>{{ rating.user.username }} rated this {{ rating.score }}.</li>
+    {% endfor %}
+    </ul>
+
+    {% for i in snippet.get_divisions %}
+      <input type="radio" name="score" value="{{ i }}">
+    {% endfor %}
+    <input type="submit" value="Rate">
+  </form>
+
   <code class="language-{{ snippet.language }}">{{ snippet.code }}</code>
 {% endblock body %}

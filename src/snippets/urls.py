@@ -10,5 +10,6 @@ urlpatterns = patterns(
     url(r"^snippet/$", views.SnippetList.as_view(), name="snippet_list"),
     url(r"^snippet/new/$", views.SnippetCreate.as_view(), name="snippet_create"),
     url(r"^snippet/(?P<pk>\d+)/$", views.SnippetDetail.as_view(), name="snippet_detail"),
+    url(r"^snippet/(?P<pk>\d+)/rate", views.SnippetRate.as_view(), name="snippet_rate"),
 )
                        

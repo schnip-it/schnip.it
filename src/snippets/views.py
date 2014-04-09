@@ -2,9 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
 
 from .models import Snippet, Board
 from .forms import BoardForm
+
+from ratings.views import RateView
 
 class SnippetList(generic.ListView):
     model = Snippet
@@ -62,3 +65,8 @@ class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     def get_queryset(self):
         return self.object.snippets.all()
 
+class SnippetRate(RateView):
+    model = Snippet
+    
+    def get_next_url(self):
+        return reverse("snippet_detail", kwargs={"pk" : self.kwargs["pk"]})

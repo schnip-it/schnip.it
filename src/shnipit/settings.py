@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     "pinax_theme_bootstrap",
     "taggit",
     "pipeline",
+    "ratings",
     "snippets",
 )
 
