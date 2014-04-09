@@ -112,3 +112,6 @@ MEDIA_URL = "/static/media/"
 
 # snippets settings
 SNIPPET_LANGUAGES = (("php", "PHP"), )
+
+LOGIN_URL = "account_login"
+LOGOUT_URL = "account_logout"

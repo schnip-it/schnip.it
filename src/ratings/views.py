@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic import View
 from django.http import HttpResponseRedirect
 from django.contrib.contenttypes.models import ContentType
@@ -16,15 +16,14 @@ class RateView(View):
     def get_model(self):
         return self.model
 
-    #@login_required
+    def get(self, request, pk):
+        return HttpResponseRedirect(self.get_next_url())
+        
     def post(self, request, pk):
         model = self.get_model()
         pk = int(pk)
-        user = User.objects.get(pk=1) # DEBUG
+        user = request.user
         ct = ContentType.objects.get_for_model(model)
-        
-        print(user)
-        print(pk)
         
         get_object_or_404(model, pk=pk)
 
