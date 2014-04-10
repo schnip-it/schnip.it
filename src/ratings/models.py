@@ -11,4 +11,4 @@ class Rating(Model):
     score = FloatField()
 
     def __str__(self):
-        return "{} = {} ({})".format(object, score, user)
+        return "{} = {} ({})".format(content_object, score, user)
