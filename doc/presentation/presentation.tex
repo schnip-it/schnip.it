@@ -1,0 +1,37 @@
+\documentclass{beamer}
+
+\usepackage{wasysym}
+%\usepackage{graphicx}
+
+\usetheme{Bergen}
+\usecolortheme{dove}
+
+\newcommand{\sectionframe}[1]{\frame{\center{\huge #1}}}
+
+\title{shnip.it}
+\author[Hu, Kay, Johnson, Saunders, Warburton]
+  { F.~Hu
+    \and J.~Kay
+    \and F.~Johnson
+    \and R.~Saunders
+    \and J.~Warburton }
+\date{2014-04-10}
+\subject{Report}
+
+\begin{document}
+  \frame{\titlepage}
+
+  \setbeamercovered{transparent}
+
+  \input infrastructure
+  \input concept
+  \input requirements
+  \input implementation
+  \input development-model
+  \input design
+  \sectionframe{Video}
+  \input testing
+  \input evaluation
+  \input conclusion
+  \input questions
+\end{document}
