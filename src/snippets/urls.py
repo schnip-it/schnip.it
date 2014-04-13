@@ -6,7 +6,11 @@ from . import views
 urlpatterns = patterns(
     '',
     url(r"^board/$", views.BoardList.as_view(), name="board_list"),
-    url(r"^board/new$", login_required(views.BoardCreate.as_view()), name="board_create"),
+    url(r"^board/mine/$", views.BoardList.as_view(), name="board_list_mine",
+        kwargs={"mine" : True}),
+    url(r"^board/public/$", views.BoardList.as_view(), name="board_list_public",
+        kwargs={"public" : True}),
+    url(r"^board/new/$", login_required(views.BoardCreate.as_view()), name="board_create"),
     url(r"^board/(?P<pk>\d+)/$", views.BoardDetail.as_view(), name="board_detail"),
     url(r"^snippet/$", views.SnippetList.as_view(), name="snippet_list"),
     url(r"^snippet/new/$", login_required(views.SnippetCreate.as_view()), name="snippet_create"),

@@ -16,10 +16,10 @@ class SnippetList(generic.ListView):
 
     def get_queryset(self):
         r = Snippet.objects
-        
+
         if "q" in self.request.GET:
             r = r.filter(description__icontains=self.request.GET["q"])
-            
+
         return r.order_by("-creation_time")
 
     def get_context_data(self, *args, **kwargs):
@@ -28,7 +28,7 @@ class SnippetList(generic.ListView):
 class SnippetCreate(generic.edit.CreateView):
     model = Snippet
     fields = ["title", "description", "language", "tags", "board", "code"]
-    
+
 class SnippetDetail(generic.DetailView):
     model = Snippet
 
@@ -37,18 +37,24 @@ class BoardList(generic.ListView):
     context_object_name = "boards"
     paginate_by = 12
 
-    def get_queryset(self):
+    def get_queryset(self, public=False, mine=False):
         r = Board.objects
-        
+
+        if mine:
+            r = r.filter(owner=self.request.user)
+
+        if public:
+            r = r.filter(read_public=True)
+
         if "q" in self.request.GET:
             r = r.filter(name__icontains=self.request.GET["q"])
-            
+
         return r.order_by("name")
-    
+
 class BoardCreate(generic.edit.CreateView):
     model = Board
     form_class = BoardForm
-        
+
 class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     paginate_by = 60
     template_name = "snippets/board_detail.html"
@@ -67,6 +73,6 @@ class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
 
 class SnippetRate(RateView):
     model = Snippet
-    
+
     def get_next_url(self):
         return reverse("snippet_detail", kwargs={"pk" : self.kwargs["pk"]})
