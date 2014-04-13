@@ -1,0 +1,460 @@
+@import url(http://fonts.googleapis.com/css?family=McLaren);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:300);
+/*@import url(lang-brushes.css);*/
+
+/* __Palette__
+ *
+ * Grey Background - #ddd
+ * Black - #333
+ * Main Blue #4aa1db
+ * Gradient Blue - background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+ * Highlight Blue - #84c1e9
+ * White Panel - #eee
+ * 
+ * Fonts:
+ * #111 or #333 for black
+ * #888 or #999 for grey, depending on background
+ * #fff for white
+ *
+ */
+
+
+body {
+	/*padding-top: 75px;*/ /* Enable this when going on main site */
+	background-color: #ddd;
+}
+
+/* Navbar CSS Begin */
+
+.navbar {
+	border: 0;
+	max-width: 980px;
+	margin: 0 auto 20px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+}
+
+.navbar-brand {
+	font-family: 'McLaren', cursive;
+	width: 90px;
+}
+
+.a-blk:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+.dropdown-menu>li>a, .dropdown-menu {
+	background-color: #64b0e2;
+}
+
+.dropdown-menu .divider {
+	background-color: #84c1e9;
+}
+
+.navbar ul li a, .navbar-brand {
+	color: #fff !important;
+}
+
+.navbar ul ul li a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.navbar ul li a:hover, .navbar-brand:hover, .navbar ul li:hover > a, .navbar-default .navbar-nav>.open>a {
+	color: #333 !important;
+	background-color: #fff !important;
+}
+
+.navbar ul li b.caret {
+	border-top-color: #fff !important;
+	border-bottom-color: #fff !important;
+}
+
+.navbar ul li a:hover > b.caret, .navbar ul li:hover > a b.caret, .navbar-default .navbar-nav>.open>a b.caret {
+	border-top-color: #333 !important;
+	border-bottom-color: #333 !important;
+}
+
+.dropdown-menu {
+	overflow: hidden;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #eee;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: 0;
+}
+
+/* Navbar CSS End */
+
+.content {
+	width: 980px;
+	margin: auto;
+}
+
+.content.thin {
+	width: 600px;
+	margin: auto;
+}
+
+.content.very-thin {
+	width: 400px;
+	margin: auto;
+}
+
+.page-title {
+	padding: 0px 0 5px;
+}
+
+#boards .search-area {
+	width: 400px;
+	text-align: center;
+	margin: 20px auto 10px;
+}
+
+#boards .search-area input {
+	width: 100%;
+	padding: 0 10px;
+	border-radius: 5px;
+	border: 1px solid #c6c6c6;
+	box-shadow: inset 1px 1px 1px #c6c6c6;
+}
+
+#boards ul {
+	padding: 0;
+	width: 900px;
+	margin: 0 auto;
+	list-style: none;
+}
+
+#boards ul::after {
+	clear: both;
+	content: ",";
+	display: block;
+	visibility: hidden;
+}
+
+#boards ul li {
+	float: left;
+}
+
+#boards ul li a:link, #boards ul li a:visited, #boards ul li a:hover, #boards ul li a:active {
+	color: #555;
+	text-decoration: none;
+}
+
+#boards ul li a:hover {
+	background-color: #e8e8e8;
+}
+
+#boards ul li .glyph span.glyphicon {
+	color: #eee;
+}
+
+#boards ul li .glyph span.glyphicon:hover {
+	color: #bbb;
+}
+
+#boards header {
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	border-bottom: 1px solid #ddd;
+	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+}
+
+#boards .board-box, #boards .snippet-box {
+	margin: 5px;
+	width: 169px;
+	height: 150px;
+	padding: 15px;
+	background: #eee;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	border-radius: 5px;
+	vertical-align: top;
+	text-decoration: none;
+	display: inline-block;
+	box-sizing: border-box;
+	border: 1px solid #c6c6c6;
+	box-shadow: 0px 1px 0px #c6c6c6;
+}
+
+.lang {
+	text-transform: uppercase;
+}
+
+span.lang, span.count {
+	line-height: 1;
+	padding: 2px 6px;
+	border-radius: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+	background-color: #84c1e9;
+	font-family: 'Source Sans Pro', cursive, sans-serif;
+}
+
+#boards ul li h3 {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+#boards ul li header span {
+	color: #fff;
+	font-size: 10px;
+	margin: 2px 8px 3px 8px;
+}
+
+#boards ul li p {
+	margin-bottom: 0;
+	text-align: left;
+}
+
+#boards ul li {
+	position: relative;
+}
+
+#boards ul li .box-add {
+	color: #84c1e9;
+	font-size: 65px;
+	line-height: 120px;
+}
+
+#boards ul li .left {
+	float: left;
+}
+
+#boards ul li .right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+ul.no-bullet {
+	list-style: none;
+}
+
+
+.header-left, .header-right {
+	background: #eee;
+	border-radius: 5px;	
+	border: 1px solid #c6c6c6;
+	box-shadow: 0px 1px 0px #c6c6c6;
+	margin-bottom: 15px;
+	overflow: hidden;
+	width: 400px;
+	height: 120px;
+	display: inline;
+}
+
+.header-left {
+	float: left;
+	margin-left: 40px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+.header-left .lang {
+	color: #fff;
+}
+
+.header-left ul {
+	display: inline-block;
+	vertical-align: top;
+	list-style: none;
+	margin-left: -30px;
+	
+}
+
+.header-right {
+	margin: 0 42px 0 0;
+	float: right;
+	padding: 5px;
+}
+
+.header-right .info-container {
+	width: 270px;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.header-right ul {
+	display: inline-block;
+	vertical-align: top;
+	list-style: none;
+	text-align: right;
+	padding-left: 0;
+}
+
+.user-image {
+	width: 110px;
+	height: 110px;
+	border-radius: 100px;
+	overflow: hidden;
+	border: 5px solid #4aa1db;
+	box-shadow: 0px 3px 0px #DFDFDF;
+	float: right;
+	vertical-align: top;
+	display: block;
+}
+
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+	clear: both;
+	height: 90px; /* '.push' must be the same height as 'footer' */
+	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+	text-align: center;
+	padding-top: 10px;
+	width: 980px;
+	margin: 0 auto;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+footer .footer-middle {
+	width: 300px;
+	margin: 0 auto;
+}
+
+footer .footer-item {
+	padding: 0 10px;
+}
+
+footer a {
+	color: #fff;
+}
+
+
+header.green {
+	height:44px;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: linear-gradient(to bottom, #9dcc4f 0%, #a6da52 100%);
+}
+
+header.green h3 {
+	color: #fff;
+	padding-top: 6px;
+}
+
+header.green h3 small {
+	color: #fff;
+	padding-top: 6px;
+}
+
+button.green {
+	color: #fff;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 1px solid #A0CD4F;
+	background: linear-gradient(to bottom, #9dcc4f 0%, #a6da52 100%);
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+}
+
+.panel-green {
+	background-color: #a6da52;
+}
+
+input.green {
+	color: #888;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 1px solid #c6c6c6;
+	background-color: #e8e8e8;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+}
+
+.green.panel-body {
+	padding: 20px;
+	border-top: 0;
+	background: #eee;
+	margin-bottom: 50px;
+	border: 1px solid #c6c6c6;
+}
+
+
+
+header.blue {
+	color: #fff;
+	height:44px;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+}
+
+header.blue h3 {
+	color: #fff;
+	padding-top: 6px;
+}
+
+header.blue h3 small {
+	color: #fff;
+	padding-top: 6px;
+}
+
+button.blue {
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 5px;
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+	background: linear-gradient(to bottom, #4aa1db 0%, #64b0e2 100%);
+}
+
+.panel-blue {
+	background-color: #64b0e2;
+}
+
+input.blue {
+	color: #888;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: #e8e8e8;
+	border: 1px solid #c6c6c6;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	font-family: 'Source Sans Pro', Consolas, Monaco, "Andale Mono", monospace;
+}
+
+.blue.panel-body {
+	border-top: 0;
+	padding: 20px;
+	background: #eee;
+	margin-bottom: 50px;
+	border: 1px solid #c6c6c6;
+}
+
+
+/* Colours
+ * #4aa1db - darker blue
+ * #64b0e2 - lighter blue
+ */
+
+
