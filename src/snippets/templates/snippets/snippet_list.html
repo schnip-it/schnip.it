@@ -6,19 +6,10 @@
 
 {% block body %}
 
-<h2 class="page-title">{{ board.name }}</h2>
-
 <section id="boards">
 
 	<ul class="board-list">
 	
-		<li>
-			<a href="create-snippet.html" class="snippet-box">
-				<div class="box-add">
-					<span class="glyphicon glyphicon-plus glyph-add"></span>
-				</div>
-			</a>
-		</li>
     {% for snippet in snippets %}      
 		<li>
 			<a href="{{ snippet.get_absolute_url }}" class="snippet-box">

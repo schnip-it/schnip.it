@@ -59,28 +59,28 @@
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="create-snippet.html">A Snippet</a></li>
-	          <li><a href="create-board.html">A Board</a></li>
+	          <li><a href="{% url 'snippet_create' %}">A Snippet</a></li>
+	          <li><a href="{% url 'board_create' %}">A Board</a></li>
 	        </ul>
 	      </li>
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="login.html">Login</a></li>
-	          <li><a href="register.html">Register</a></li>
+	          <li><a href="{% url 'login' %}">Login</a></li>
+	          <li><a href="{% url 'registration' %}">Register</a></li>
 	        </ul>
 	      </li>
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="faq.html">FAQ</a></li>
-	          <li><a href="contact.html">Contact</a></li>
+	          <li><a href="{% url 'help' %}">FAQ</a></li>
+	          <li><a href="{% url 'contact' %}">Contact</a></li>
 	        </ul>
 	      </li>
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="project.html">Project</a></li>
+	          <li><a href="{% url 'about' %}">Project</a></li>
 	          <li><a href="team.html">The Team</a></li>
 	        </ul>
 	      </li>
