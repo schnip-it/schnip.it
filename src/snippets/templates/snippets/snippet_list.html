@@ -5,38 +5,34 @@
 {% endblock %}
 
 {% block body %}
-  <div class="content">
-		
-			<h2 class="page-title">Public Boards - Javascript</h2>
-		
-			<section id="boards">
-				<ul class="board-list">
-				
-					<li>
-						<a href="snippet.html" class="snippet-box">
-							<div class="snippet-add">
-								<span class="glyphicon glyphicon-plus"></span>
-							</div>
-						</a>
-					</li>
-					
-					
+
+<h2 class="page-title">{{ board.name }}</h2>
+
+<section id="boards">
+
+	<ul class="board-list">
+	
+		<li>
+			<a href="create-snippet.html" class="snippet-box">
+				<div class="box-add">
+					<span class="glyphicon glyphicon-plus glyph-add"></span>
+				</div>
+			</a>
+		</li>
     {% for snippet in snippets %}      
-      		<li>
-						<a href="{{ snippet.get_absolute_url }}" class="snippet-box">
-							<header>
-								<span class="left lang js">{{ snippet.language }}</span>
-								<span class="right count likes">SCORE</span>
-							</header>
-							<h3>{{ snippet.title }}</h3>
-						</a>
-					</li>
+		<li>
+			<a href="{{ snippet.get_absolute_url }}" class="snippet-box">
+				<header>
+					<span class="left lang js">{{ snippet.language }}</span>
+					<span class="right count likes">{{ snippet.get_mean_rating }}</span>
+				</header>
+				<h3>{{ snippet.title }}</h3>
+			</a>
+		</li>
     {% endfor %}
-    		</ul>
-			<div class="clear"></div>
-			</section>
-		
-		</div>
+	</ul>
+<div class="clear"></div>
+</section>
 
   {% include "snippets/pagination.html" with page=page_obj %}
 {% endblock body %}
