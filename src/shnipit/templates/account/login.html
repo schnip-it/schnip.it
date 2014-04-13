@@ -1,0 +1,36 @@
+{% extends "site_base.html" %}
+
+{% load staticfiles %}
+
+{% block head_title %}
+  Login
+{% endblock %}
+
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="content very-thin">
+
+	<section class="login-panel">
+		<header class="login-panel-header blue">
+			<h3>Login</h3>
+		</header>
+		<div class="clear"></div>
+		<!-- &#013;&#010; -->
+		<div class="login-panel-body panel-body blue">
+			
+			<form id="form-login"method="post" action="">
+			  
+				<input class="green" placeholder="Email Address" type="text" name="user">
+				<input class="green" placeholder="Password" type="password" name="pass">
+			
+				<button name="save" type="submit" class="blue login-button">Login</button>
+			</form>
+		<div class="clear"></div>
+		</div>
+	</section>
+	
+</div>
+{% endblock %}

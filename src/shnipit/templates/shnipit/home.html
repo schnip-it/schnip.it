@@ -46,8 +46,8 @@
 				<a href="#" class="icon"><i class="fa fa-cut"></i></a>
 				<h2>Create</h2>
 				<ul>
-					<li><a href="create-snippet.html">A Snippet</a></li>
-					<li><a href="create-board.html">A Board</a></li>
+					<li><a href="{% url 'snippet_create' %}">A Snippet</a></li>
+					<li><a href="{% url 'board_create' %}">A Board</a></li>
 				</ul>
 			</div>
 			<div class="item third-item">
@@ -55,8 +55,8 @@
 				<a href="#" class="icon"><i class="fa fa-user"></i></a>
 				<h2>User</h2>
 				<ul>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="register.html">Register</a></li>
+					<li><a href="{% url 'account_login' %}">Login</a></li>
+					<li><a href="{% url 'account_signup' %}">Register</a></li>
 				</ul>
 			</div>
 			<div class="item fourth-item">
@@ -64,8 +64,8 @@
 				<a href="#" class="icon"><i class="fa fa-question"></i></a>
 				<h2>Help</h2>
 				<ul>
-					<li><a href="faq.html">FAQ</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="{% url 'help' %}">FAQ</a></li>
+					<li><a href="{% url 'contact' %}">Contact</a></li>
 				</ul>
 			</div>
 			<div class="item fifth-item">
@@ -73,7 +73,7 @@
 				<a href="#" class="icon"><i class="fa fa-info"></i></a>
 				<h2>About</h2>
 				<ul>
-					<li><a href="project.html">Project</a></li>
+					<li><a href="{% url 'about' %}">Project</a></li>
 					<li><a href="team.html">The Team</a></li>
 				</ul>
 			</div>

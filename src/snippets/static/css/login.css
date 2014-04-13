@@ -1,0 +1,10 @@
+.login-panel-body input {
+	width: 100% !important;
+	margin-bottom: 10px;
+}
+
+.login-button {
+	margin-top: 10px;
+	float: right;
+	padding: 4px 35px;
+}
