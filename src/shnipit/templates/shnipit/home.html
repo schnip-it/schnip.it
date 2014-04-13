@@ -1,13 +1,97 @@
-{% extends "site_base.html" %}
+{% load staticfiles %}
 
-{% block head_title %}
-  Home
-{% endblock %}
+<!-- 
+		 This page's idea and majority of code was adapted from a tutorial
+		 found at http://tympanus.net/codrops/2010/04/29/awesome-bubble-navigation-with-jquery/
+		 It was originally written by Mary Lou in April 29, 2010. It is available for public use. 
+-->
 
-{% block body %}
-<h1>shnip.it</h1>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<title>Shnip.it - Efficient Cross-Project Snippet Reuse Tool</title>
+		
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link href="//necolas.github.io/normalize.css/2.1.3/normalize.css" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-{% if user.is_authenticated %}
-  <p>Hello, {{ user.username }}</p>
-{% endif %}
-{% endblock body %}
+  </head>
+  
+	<body>
+		
+		<div id="content">
+			<div class="title">
+				<a href="home.html"><h1>Shnip.it <i class="fa fa-cut"></i></h1></a>
+				<label for="search-shnipit" class="sr-only"></label>
+				<div class="input-with-button">
+					<input type="text" name="search-shnipit" class="search-shnipit" placeholder="Javascript"><button type="button" class="try-button">Try it now</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="navigation" id="nav" role="navigation">
+			<div class="item first-item">
+				<div class="circle"></div>
+				<a href="#" class="icon"><i class="fa fa-th"></i></a>
+				<h2>Boards</h2>
+				<ul>
+					<li><a href="public-boards.html">Public Boards</a></li>
+					<li><a href="my-boards.html">My Boards</a></li>
+				</ul>
+			</div>
+			<div class="item second-item">
+				<div class="circle"></div>
+				<a href="#" class="icon"><i class="fa fa-cut"></i></a>
+				<h2>Create</h2>
+				<ul>
+					<li><a href="create-snippet.html">A Snippet</a></li>
+					<li><a href="create-board.html">A Board</a></li>
+				</ul>
+			</div>
+			<div class="item third-item">
+				<div class="circle"></div>
+				<a href="#" class="icon"><i class="fa fa-user"></i></a>
+				<h2>User</h2>
+				<ul>
+					<li><a href="login.html">Login</a></li>
+					<li><a href="register.html">Register</a></li>
+				</ul>
+			</div>
+			<div class="item fourth-item">
+				<div class="circle"></div>
+				<a href="#" class="icon"><i class="fa fa-question"></i></a>
+				<h2>Help</h2>
+				<ul>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="item fifth-item">
+				<div class="circle"></div>
+				<a href="#" class="icon"><i class="fa fa-info"></i></a>
+				<h2>About</h2>
+				<ul>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="team.html">The Team</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="container">
+				<small><!--Small text here--></small>
+			</div>
+		</footer>
+	
+		<!-- JS and analytics only. -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+		<script src="{% static 'js/index.js' %}"></script>
+		
+		
+	</body>
+			 
+</html>

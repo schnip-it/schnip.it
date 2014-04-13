@@ -1,11 +1,11 @@
 <footer>
-  <ul>
-    <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
-    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-  </ul>
-
-  {% if user.is_authenticated %}
-    <p>You are logged in as {{ user.username }}.
-      <a href="{% url 'account_logout' %}">Log out</a>?</p>
-  {% endif %}
+  <div class="footer-middle">
+	  <span class="footer-item"><a href="{% url 'privacy' %}">Privacy Policy</a></span>
+	  <span class="footer-item"><a class="a-blk" href="{% url 'contact' %}">Contact Us</a></span>
+	
+	  {% if user.is_authenticated %}
+	    <p>You are logged in as {{ user.username }}.
+	      <a class="a-blk" href="{% url 'account_logout' %}">Log out</a>?</p>
+	  {% endif %}
+  </div>
 </footer>
