@@ -1,10 +1,27 @@
 {% load i18n %}
 
-<h1>Registration</h1>
-
-<form method="post" action="">
-  {% csrf_token %}
-  {{ form.as_p }}
-
-  <input type="submit" value="{% trans 'Register' %}">
-</form>
+<div class="content very-thin">
+			
+			<section class="register-panel">
+				<header class="register-panel-header blue">
+					<h3>Register an Account</h3>
+				</header>
+				<div class="clear"></div>
+				<!-- &#013;&#010; -->
+				<div class="register-panel-body panel-body blue">
+					
+					<form id="form-register" method="post" action="">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<input class="blue" placeholder="Full Name" type="text" name="full-name">
+						<input class="blue" placeholder="Email Address" type="email" name="user">
+						<input class="blue" placeholder="Password" type="password" name="pass">
+						<input class="blue" placeholder="Retype Password" type="password" name="pass-retype">
+					
+						<button name="register" type="submit" class="blue register-button" value="{% trans 'Register' %}">Register</button>
+					</form>
+				<div class="clear"></div>
+				</div>
+			</section>
+			
+		</div>

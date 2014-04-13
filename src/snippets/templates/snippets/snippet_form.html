@@ -5,10 +5,35 @@
 {% endblock %}
 
 {% block body %}
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <input type="submit" value="Save">
-  </form>
+  <h2 class="page-title">Create Snippet</h2>
+			
+	<section class="edit-snippet">
+		<form id="create-snippet" action="" method="post">
+			{% csrf_token %}
+	    {{ form.as_p }}
+			<header class="edit-snippet-header blue">
+				<select class="select-lang">
+					<option value="js">Javascript</option>
+					<option value="css">CSS</option>
+				</select>
+				<input class="input-title" type="text" name="title" placeholder="The title for your snippet">
+				<input class="input-keys" type="text" name="keys" placeholder="key, words">
+			</header>
+			<div class="clear"></div>
+			<!-- &#013;&#010; -->
+			<div class="edit-snippet-body">
+				<textarea class="textarea-comment" placeholder="Write the description for your snippet here"></textarea>
+				<textarea class="textarea-body" placeholder="This will be the body of your snippet"></textarea>
+			
+				
+				<button class="create-button blue" type="submit" href="#">Submit</button>
+				<div class="clear"></div>
+			</div>
+			
+			
+	
+		</form>
+	</section>
 {% endblock body %}
+
+

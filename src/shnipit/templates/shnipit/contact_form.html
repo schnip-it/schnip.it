@@ -5,11 +5,27 @@
 {% endblock %}
 
 {% block body %}
-  <h1>Contact the shnip.it Team</h1>
 
-  <form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Send">
-  </form>
+<div class="content thin">
+	
+	<section class="faq-panel">
+		<header class="faq-panel-header blue">
+			<h3>Contact Shnip.it</small></h3>
+		</header>
+		<div class="clear"></div>
+		<!-- &#013;&#010; -->
+		<div class="faq-panel-body panel-body blue">
+			
+			<h4>To get in touch just fill in this form!</h4>
+			<form action="" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="Send">
+			</form>
+			
+			 <div class="clear"></div>
+		</div>
+	</section>
+	
+</div>  
 {% endblock body %}
