@@ -1,7 +1,13 @@
 {% extends "site_base.html" %}
 
+{% load staticfiles %}
+
 {% block head_title %}
   {{ board.name }}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/snippet_list.css' %}">
 {% endblock %}
 
 {% block body %}

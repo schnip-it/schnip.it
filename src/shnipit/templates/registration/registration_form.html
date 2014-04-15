@@ -13,12 +13,8 @@
 					<form id="form-register" method="post" action="">
 						{% csrf_token %}
 						{{ form.as_p }}
-						<input class="blue" placeholder="Full Name" type="text" name="full-name">
-						<input class="blue" placeholder="Email Address" type="email" name="user">
-						<input class="blue" placeholder="Password" type="password" name="pass">
-						<input class="blue" placeholder="Retype Password" type="password" name="pass-retype">
 					
-						<button name="register" type="submit" class="blue register-button" value="{% trans 'Register' %}">Register</button>
+						<input name="register" value="{% trans 'Register' %}">
 					</form>
 				<div class="clear"></div>
 				</div>

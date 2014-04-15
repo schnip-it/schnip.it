@@ -13,10 +13,8 @@
 			<form id="form-login"method="post" action="">
 			  {% csrf_token %}
 			  {{ form.as_p }}
-				<input class="green" placeholder="Email Address" type="text" name="user">
-				<input class="green" placeholder="Password" type="password" name="pass">
-
-				<button name="save" type="submit" class="blue login-button" value="{% trans 'Log In' %}">Login</button>
+				
+				<input name="save" value="{% trans 'Log In' %}">
 			</form>
 		<div class="clear"></div>
 		</div>
