@@ -29,6 +29,10 @@ class SnippetCreate(generic.edit.CreateView):
     model = Snippet
     fields = ["title", "description", "language", "tags", "board", "code"]
 
+    def form_valid(self, form):
+        self.object.owner = self.request.user
+        return super().form_valid(form)
+    
 class SnippetDetail(generic.DetailView):
     model = Snippet
 
@@ -60,6 +64,10 @@ class BoardList(generic.ListView):
 class BoardCreate(generic.edit.CreateView):
     model = Board
     form_class = BoardForm
+
+    def form_valid(self, form):
+        self.object.owner = self.request.user
+        return super().form_valid(form)
 
 class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     paginate_by = 60
