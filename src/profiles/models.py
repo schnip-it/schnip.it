@@ -8,6 +8,8 @@ class UserProfile(models.Model):
     user   = models.OneToOneField(User, unique=True, related_name="profile")
     avatar = models.ImageField(upload_to="profiles/avatars", null=True, blank=True)
     bio    = models.TextField(blank=True)
+    sub1   = models.TextField(blank=True)
+    sub2   = models.TextField(blank=True)
 
     def __str__(self):
         return "<UserProfile for {}>".format(self.user)
