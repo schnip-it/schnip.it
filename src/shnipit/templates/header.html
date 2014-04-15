@@ -51,8 +51,8 @@
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Boards <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="my-boards.html">My Boards</a></li>
-	          <li><a href="public-boards.html">Public Boards</a></li>
+	          <li><a href="{% url 'board_list_mine' %}">My Boards</a></li>
+	          <li><a href="{% url 'board_list_public' %}">Public Boards</a></li>
 	          <!--<li class="divider"></li>-->
 	        </ul>
 	      </li>

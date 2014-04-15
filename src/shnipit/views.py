@@ -11,6 +11,9 @@ def tos(req):
 def about(req):
     return render(req, "shnipit/about.html", {})
 
+def team(req):
+    return render(req, "shnipit/team.html", {})
+
 def help(req):
     return render(req, "shnipit/help.html", {})
 

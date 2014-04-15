@@ -18,6 +18,7 @@ urlpatterns = patterns(
     url(r"^tos/$", views.tos, name="tos"),
     url(r"^help/$", views.help, name="help"),
     url(r"^about/$", views.about, name="about"),
+    url(r"^team/$", views.team, name="team"),
     url(r"^privacy/$", views.privacy, name="privacy"),
     url(r"^contact/$", views.Contact.as_view(), name="contact"),
     url(r"^", include("snippets.urls")),
