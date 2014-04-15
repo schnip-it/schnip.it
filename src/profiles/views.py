@@ -16,6 +16,8 @@ class ProfileSettingsView(SettingsView):
         profile = self.request.user.profile
         profile.bio = form.cleaned_data["bio"]
         profile.avatar = form.cleaned_data["avatar"]
+        profile.sub1 = form.cleaned_data["sub1"]
+        profile.sub2 = form.cleaned_data["sub2"]
         profile.save()
 
     def get_initial(self):

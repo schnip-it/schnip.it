@@ -6,7 +6,7 @@ from snippets.models import Board
 
 class UserProfile(models.Model):
     user   = models.OneToOneField(User, unique=True, related_name="profile")
-    avatar = models.ImageField(upload_to="profiles/avatars", default="profiles/avatars/default.jpeg")
+    avatar = models.ImageField(upload_to="profiles/avatars", null=True, blank=True)
     bio    = models.TextField(blank=True)
 
     def __str__(self):

@@ -6,7 +6,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
-INSTALLED_APPS += ('django_extensions', 'south', 'debug_toolbar')
+INSTALLED_APPS += ('django_extensions', 'south')
 
 DATABASES = {
     'default': {
