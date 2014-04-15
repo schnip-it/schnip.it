@@ -34,9 +34,6 @@ class ProfileDetailView(DetailView):
     model = User
     context_object_name = "profile_user"
 
-    def get_context_data(self, *args, **kwargs):
-        return super().get_context_data(*args, **kwargs)
-    
     def get(self, request, *args, **kwargs):
         if "pk" not in kwargs:
             self.kwargs["pk"] = request.user.pk
