@@ -37,8 +37,8 @@
 				<a href="#" class="icon"><i class="fa fa-th"></i></a>
 				<h2>Boards</h2>
 				<ul>
-					<li><a href="public-boards.html">Public Boards</a></li>
-					<li><a href="my-boards.html">My Boards</a></li>
+					<li><a href="{% url 'board_list_public' %}">Public Boards</a></li>
+					<li><a href="{% url 'board_list_mine' %}">My Boards</a></li>
 				</ul>
 			</div>
 			<div class="item second-item">
@@ -74,7 +74,7 @@
 				<h2>About</h2>
 				<ul>
 					<li><a href="{% url 'about' %}">Project</a></li>
-					<li><a href="team.html">The Team</a></li>
+					<li><a href="{% url 'team' %}">The Team</a></li>
 				</ul>
 			</div>
 		</div>

@@ -19,6 +19,9 @@
  *
  */
 
+.row {
+	margin-left: 
+}
 
 body {
 	/*padding-top: 75px;*/ /* Enable this when going on main site */
@@ -323,6 +326,7 @@ html, body {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
+	padding-bottom: 60px;
 }
 footer, .push {
 	clear: both;
