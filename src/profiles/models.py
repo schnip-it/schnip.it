@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 
 from snippets.models import Board
 
@@ -16,6 +17,9 @@ class UserProfile(models.Model):
 
     def own_public_boards(self):
         return Board.objects.filter(owner=self.user, read_public=True)
+
+    def get_absolute_url(self):
+        return reverse("account_profile", pk=self.pk)
         
 def create_user_profile(sender, instance, created, **kwargs):
     UserProfile.objects.get_or_create(user=instance)
