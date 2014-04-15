@@ -37,13 +37,19 @@ class BoardList(generic.ListView):
     context_object_name = "boards"
     paginate_by = 60
 
-    def get_queryset(self, public=False, mine=False):
+    def get_context_data(self, *args, **kwargs):
+        r = super().get_context_data(*args, **kwargs)
+        r["mine"] = self.kwargs.get("mine", False)
+        r["public"] = self.kwargs.get("public", False)
+        return r
+    
+    def get_queryset(self):
         r = Board.objects
 
-        if mine:
+        if self.kwargs.get("mine", False):
             r = r.filter(owner_id=self.request.user.pk)
 
-        if public:
+        if self.kwargs.get("public", False):
             r = r.filter(read_public=True)
 
         if "q" in self.request.GET:
