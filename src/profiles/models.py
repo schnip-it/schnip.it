@@ -14,15 +14,15 @@ class UserProfile(models.Model):
     def __str__(self):
         return "<UserProfile for {}>".format(self.user)
 
-    def own_boards(self):
-        return Board.objects.filter(owner=self.user)
+    def get_boards_visible_to(self, user):
+        return self.user.readable_boards.filter(owner=user)
 
-    def own_public_boards(self):
-        return Board.objects.filter(owner=self.user, read_public=True)
-
+    def get_snippets_visible_to(self, user):
+        return self.user.snippets.filter(owner=user)
+        
     def get_absolute_url(self):
         return reverse("account_profile", pk=self.pk)
-        
+
 def create_user_profile(sender, instance, created, **kwargs):
     UserProfile.objects.get_or_create(user=instance)
 
