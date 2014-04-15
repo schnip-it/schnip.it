@@ -37,7 +37,7 @@
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
               {% if user.is_authenticated %}
-              <li><a href="{% url 'account_settings' %}">Settings</a></li>
+              <li><a href="{% url 'account_my_profile' %}">My Profile</a></li>
               {% else %}
 	          <li><a href="{% url 'account_login' %}">Login</a></li>
 	          <li><a href="{% url 'account_signup' %}">Register</a></li>

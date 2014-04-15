@@ -353,6 +353,10 @@ footer a {
 	color: #fff;
 }
 
+.hidden {
+	display: none;
+}
+
 
 header.green {
 	height:44px;
