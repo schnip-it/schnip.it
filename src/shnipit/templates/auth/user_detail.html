@@ -1,0 +1,44 @@
+{% extends "site_base.html" %}
+
+{% block head_title %}
+  {{ user.username }}'s Profile
+{% endblock %}
+
+{% block body %}
+<div class="content thin">
+  <section class="faq-panel">
+    <header class="blue">
+      <h3>{{ profile_user.username }}</h3>
+    </header>
+
+	<div class="clear"></div>
+	<!-- &#013;&#010; -->
+	<div class="panel-body">
+      {{ profile_user.profile.bio }}
+	  <div class="clear"></div>
+	</div>
+  </section>
+
+  <section class="faq-panel">
+    <header class="blue">
+      <h3>{{ profile_user.username }}'s Boards</h3>
+    </header>
+
+    <div class="panel-body">
+      <ul class="board-list">
+      {% for board in profile_user.profile.own_public_boards.all %}
+        <li>
+		  <a href="{{ board.get_absolute_url }}" class="board-box">
+			<header>
+			  <span class="left count snippets">{{ board.count }}</span>
+			</header>
+			<h3>{{ board.name }}</h3>
+		  </a>
+		  <a href="edit-board.html" class="top-right-glyph-one glyph"><i class="fa fa-pencil"></i></a><a href="#" class="top-right-glyph-two glyph"><i class="fa fa-trash-o"></i></a>
+		</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+{% endblock %}

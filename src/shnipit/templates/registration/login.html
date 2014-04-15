@@ -9,17 +9,17 @@
 		<div class="clear"></div>
 		<!-- &#013;&#010; -->
 		<div class="login-panel-body panel-body blue">
-			
+
 			<form id="form-login"method="post" action="">
 			  {% csrf_token %}
 			  {{ form.as_p }}
 				<input class="green" placeholder="Email Address" type="text" name="user">
 				<input class="green" placeholder="Password" type="password" name="pass">
-			
+
 				<button name="save" type="submit" class="blue login-button" value="{% trans 'Log In' %}">Login</button>
 			</form>
 		<div class="clear"></div>
 		</div>
 	</section>
-	
+
 </div>

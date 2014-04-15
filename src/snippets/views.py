@@ -35,13 +35,13 @@ class SnippetDetail(generic.DetailView):
 class BoardList(generic.ListView):
     model = Board
     context_object_name = "boards"
-    paginate_by = 12
+    paginate_by = 60
 
     def get_queryset(self, public=False, mine=False):
         r = Board.objects
 
         if mine:
-            r = r.filter(owner=self.request.user)
+            r = r.filter(owner_id=self.request.user.pk)
 
         if public:
             r = r.filter(read_public=True)
