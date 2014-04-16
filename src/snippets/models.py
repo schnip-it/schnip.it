@@ -12,8 +12,8 @@ class Board(models.Model):
     owner = models.ForeignKey(User, related_name="boards")
     read_public = models.BooleanField()
     write_public = models.BooleanField()
-    read_users = models.ManyToManyField(User, related_name="readable", blank=True)
-    write_users = models.ManyToManyField(User, related_name="writeable", blank=True)
+    read_users = models.ManyToManyField(User, related_name="readable_boards", blank=True)
+    write_users = models.ManyToManyField(User, related_name="writeable_boards", blank=True)
 
     def __str__(self):
         return self.name
@@ -25,6 +25,7 @@ class Snippet(models.Model):
     creation_time = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    owner = models.ForeignKey(User, related_name="snippets")
     board = models.ForeignKey(Board, related_name="snippets")
     language = models.CharField(max_length=255, choices=SNIPPET_LANGUAGES)
     code = models.TextField()
