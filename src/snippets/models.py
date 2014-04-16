@@ -23,8 +23,8 @@ class Board(models.Model):
 
     @staticmethod
     def get_visible(user):
-        return Board.objects.filter(Q(readable_users=self.user)
-                                    | Q(owner=self.user))
+        return Board.objects.filter(models.Q(read_users=user)
+                                    | models.Q(owner=user))
         
 class Snippet(models.Model):
     creation_time = models.DateField(auto_now_add=True)
@@ -42,8 +42,8 @@ class Snippet(models.Model):
 
     @staticmethod
     def get_visible(user):
-        return Board.objects.filter(Q(board__readable_users=self.user)
-                                    | Q(owner=self.user))
+        return Snippet.objects.filter(models.Q(board__read_users=user)
+                                      | models.Q(owner=user))
         
     def get_absolute_url(self):
         return reverse("snippet_detail", kwargs={"pk" : self.pk})

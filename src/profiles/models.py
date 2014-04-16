@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
-from snippets.models import Board
+from snippets.models import Board, Snippet
 
 class UserProfile(models.Model):
     user   = models.OneToOneField(User, unique=True, related_name="profile")
