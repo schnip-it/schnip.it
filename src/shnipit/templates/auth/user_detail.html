@@ -48,7 +48,7 @@
 			<div class="profile-latest-snippets">
 				<h4><i class="fa fa-thumb-tack"></i> My latest Snippets <a href="#" class="profile-latest-view-all">View all</a></h4>
 				<ul class="profile-latest-list">
-					{% for snippet in profile_user.profile.get_visible_snippets %}
+					{% for snippet in profile_user.profile.get_visible_snippets.all %}
 					<li><a href="#" class="a-blk"><span class="lang">{{ snippet.language }}</span> - {{ snippet.name }}</a></li>
 					{% endfor %}
 				</ul>
