@@ -3,6 +3,8 @@ from django.views.generic import DetailView
 from django.contrib.auth.models import User
 from account.views import SettingsView
 from .forms import ProfileSettingsForm
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 
 class ProfileSettingsView(SettingsView):
@@ -36,6 +38,7 @@ class ProfileDetailView(DetailView):
     model = User
     context_object_name = "profile_user"
 
+    @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         if "pk" not in kwargs:
             self.kwargs["pk"] = request.user.pk

@@ -21,6 +21,11 @@ class Board(models.Model):
     def get_absolute_url(self):
         return reverse("board_detail", kwargs={"pk" : self.pk})
 
+    @staticmethod
+    def get_visible(user):
+        return Board.objects.filter(Q(readable_users=self.user)
+                                    | Q(owner=self.user))
+        
 class Snippet(models.Model):
     creation_time = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=255)
@@ -35,6 +40,11 @@ class Snippet(models.Model):
     def __str__(self):
         return self.title
 
+    @staticmethod
+    def get_visible(user):
+        return Board.objects.filter(Q(board__readable_users=self.user)
+                                    | Q(owner=self.user))
+        
     def get_absolute_url(self):
         return reverse("snippet_detail", kwargs={"pk" : self.pk})
 
