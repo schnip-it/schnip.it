@@ -13,26 +13,27 @@
 {% block body %}
   <h2 class="page-title">Create Snippet</h2>
 	<section class="edit-snippet">
+        {{ form.non_field_errors }}
 		<form id="create-snippet" action="" method="post">
 			{% csrf_token %}
 			<header class="edit-snippet-header blue">
-				<select class="select-lang" name="{{ form.language.name }}">
-                    {% for value, language in form.language.field.choices %}
+				<select class="select-lang" name="{{ form.fields.language.name }}">
+                    {% for value, language in form.fields.language.choices %}
                         <option value="{{ value }}">{{ language }}</option>
                     {% endfor %}
 				</select>
                 {{ form.language.errors }}
-				<input class="input-title" type="text" name="{{ form.title.name }}" placeholder="The title for your snippet">
+				<input class="input-title" type="text" name="{{ form.fields.title.name }}" placeholder="The title for your snippet">
                 {{ form.title.errors }}
-				<input class="input-keys" type="text" name="{{ form.tags.name }}" placeholder="key, words">
+				<input class="input-keys" type="text" name="{{ form.fields.tags.name }}" placeholder="key, words">
                 {{ form.tags.errors }}
 			</header>
 			<div class="clear"></div>
 			<!-- &#013;&#010; -->
 			<div class="edit-snippet-body">
-				<textarea class="textarea-comment" name="{{ form.description.name }}" placeholder="Write the description for your snippet here"></textarea>
+				<textarea class="textarea-comment" name="{{ form.fields.description.name }}" placeholder="Write the description for your snippet here"></textarea>
                 {{ form.description.errors }}
-				<textarea class="textarea-body" name="{{ form.code.name }}" placeholder="This will be the body of your snippet"></textarea>
+				<textarea class="textarea-body" name="{{ form.fields.code.name }}" placeholder="This will be the body of your snippet"></textarea>
                 {{ form.code.errors }}
 
 				<button class="create-button blue" type="submit" href="#">Submit</button>

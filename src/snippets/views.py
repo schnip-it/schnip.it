@@ -30,8 +30,11 @@ class OwnedCreateView(generic.edit.CreateView):
         self.object = form.save(commit=False)
         self.object.owner = self.request.user
         self.object.save()
-        print (self.get_success_url())
         return redirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        print ("Form invalid! " + repr(form.__dict__))
+        return super().form_invalid(form)
 
 class SnippetCreate(OwnedCreateView):
     model = Snippet
