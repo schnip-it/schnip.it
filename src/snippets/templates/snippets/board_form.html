@@ -12,6 +12,7 @@
 
 {% block body %}
 <h2 class="page-title">Create Board</h2>
+
 			
 	{% if form.errors.description %}
 	<ul>
@@ -20,7 +21,7 @@
 		{% endfor %}
 	</ul>
 	{% endif %}
-			
+
 <section class="edit-board">
 	<form id="create-board" action="" method="post">
 		{% csrf_token %}
@@ -30,19 +31,21 @@
 		<div class="clear"></div>
 		<!-- &#013;&#010; -->
 		<div class="edit-board-body">
-			<textarea class="textarea-desc" placeholder="Description of Board"></textarea>
+			<textarea class="textarea-desc" placeholder="Description of Board" name="{{ form.description.name }}"></textarea>
 			<select class="dropdown-privacy">
 				<option value="private">Private</option>
 				<option value="public">Public</option>
 			</select>
 			<textarea class="textarea-users" placeholder="Enter, Emails, Here"></textarea>
-			
+
 			<button name="save" type="submit" class="save-button blue">Create Board</button>
-			
+
 			<div class="clear"></div>
 		</div>
-			
-		
+
+
+		{{ form.as_p }}
+
 	</form>
 </section>
 {% endblock body %}

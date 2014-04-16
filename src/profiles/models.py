@@ -16,12 +16,10 @@ class UserProfile(models.Model):
         return "<UserProfile for {}>".format(self.user)
 
     def get_visible_boards(self):
-        return Board.objects.filter(Q(readable_users=self.user)
-                                    | Q(owner=self.user))
+        return Board.get_visible(self.user)
 
     def get_visible_snippets(self):
-        return Snippet.objects.filter(Q(board__owner=self.user)
-                                      | Q(board__readable_users=self.user))
+        return Snippet.get_visible(self.user)
         
     def get_absolute_url(self):
         return reverse("account_profile", pk=self.pk)

@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     "pipeline",
     "ratings",
     "snippets",
+    "rest_framework",
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "shnipit", "templates"),)

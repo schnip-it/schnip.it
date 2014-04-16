@@ -3,6 +3,8 @@ from django.views import generic
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from .models import Snippet, Board
 from .forms import BoardForm, SnippetForm
@@ -15,7 +17,7 @@ class SnippetList(generic.ListView):
     paginate_by = 12
 
     def get_queryset(self):
-        r = Snippet.objects
+        r = self.request.user.profile.get_visible_snippets()
 
         if "q" in self.request.GET:
             r = r.filter(description__icontains=self.request.GET["q"])
@@ -31,6 +33,10 @@ class OwnedCreateView(generic.edit.CreateView):
         self.object.owner = self.request.user
         self.object.save()
         return redirect(self.get_success_url())
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
     def form_invalid(self, form):
         print ("Form invalid! " + repr(form.__dict__))
@@ -55,7 +61,7 @@ class BoardList(generic.ListView):
         return r
 
     def get_queryset(self):
-        r = Board.objects
+        r = self.request.user.profile.get_visible_boards()
 
         if self.kwargs.get("mine", False):
             r = r.filter(owner_id=self.request.user.pk)

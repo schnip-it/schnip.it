@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
 
 from . import views
+from . import api_views
 
 urlpatterns = patterns(
     '',
@@ -15,7 +16,11 @@ urlpatterns = patterns(
     url(r"^snippet/$", views.SnippetList.as_view(), name="snippet_list"),
     url(r"^snippet/new/$", login_required(views.SnippetCreate.as_view()), name="snippet_create"),
     url(r"^snippet/(?P<pk>\d+)/$", views.SnippetDetail.as_view(), name="snippet_detail"),
-    url(r"^snippet/(?P<pk>\d+)/rate", login_required(views.SnippetRate.as_view()),
+    url(r"^snippet/(?P<pk>\d+)/rate/$", login_required(views.SnippetRate.as_view()),
         name="snippet_rate"),
+
+    url("^api/$", api_views.api_root),
+    url(r"^api/snippet/$", api_views.SnippetList.as_view(), name="api-snippet_list"),
+    url(r"^api/snippet/(?P<pk>\d+)/$", api_views.SnippetDetail.as_view(), name="api-snippet_detail"),
 )
                        
