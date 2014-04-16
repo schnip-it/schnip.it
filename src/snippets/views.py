@@ -30,12 +30,13 @@ class OwnedCreateView(generic.edit.CreateView):
         self.object = form.save(commit=False)
         self.object.owner = self.request.user
         self.object.save()
+        print (self.get_success_url())
         return redirect(self.get_success_url())
-        
+
 class SnippetCreate(OwnedCreateView):
     model = Snippet
     form_class = SnippetForm
-    
+
 class SnippetDetail(generic.DetailView):
     model = Snippet
 
@@ -49,7 +50,7 @@ class BoardList(generic.ListView):
         r["mine"] = self.kwargs.get("mine", False)
         r["public"] = self.kwargs.get("public", False)
         return r
-    
+
     def get_queryset(self):
         r = Board.objects
 
