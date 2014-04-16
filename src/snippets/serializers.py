@@ -12,8 +12,7 @@ from .models import Snippet
     # code = models.TextField()
     # tags = TaggableManager()
     # ratings = GenericRelation(Rating)
-
-
+    
 class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Snippet

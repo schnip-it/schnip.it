@@ -18,8 +18,9 @@ urlpatterns = patterns(
     url(r"^snippet/(?P<pk>\d+)/$", views.SnippetDetail.as_view(), name="snippet_detail"),
     url(r"^snippet/(?P<pk>\d+)/rate/$", login_required(views.SnippetRate.as_view()),
         name="snippet_rate"),
-    
-    url(r"^api/snippet/$", api_views.SnippetList.as_view()),
-    url(r"^api/snippet/(?P<pk>\d+)/$", api_views.SnippetDetail.as_view()),
+
+    url("^api/$", api_views.api_root),
+    url(r"^api/snippet/$", api_views.SnippetList.as_view(), name="api-snippet_list"),
+    url(r"^api/snippet/(?P<pk>\d+)/$", api_views.SnippetDetail.as_view(), name="api-snippet_detail"),
 )
                        
