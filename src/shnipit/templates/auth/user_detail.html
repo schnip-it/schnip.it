@@ -48,7 +48,7 @@
 			<div class="profile-latest-snippets">
 				<h4><i class="fa fa-thumb-tack"></i> My latest Snippets <a href="#" class="profile-latest-view-all">View all</a></h4>
 				<ul class="profile-latest-list">
-					{% for snippet in profile.get_visible_snippets %}
+					{% for snippet in profile.get_visible_snippets.all %}
 					<li><a href="#" class="a-blk"><span class="lang">{{ snippet.language }}</span> - {{ snippet.name }}</a></li>
 					{% endfor %}
 				</ul>
@@ -69,7 +69,7 @@
 			<div class="profile-latest-boards">
 				<h4><i class="fa fa-lock"></i> Boards I can access <a href="#" class="profile-latest-view-all">View all</a></h4>
 				<ul class="profile-latest-list">
-					{% for board in profile.get_visible_boards %}
+					{% for board in profile.get_visible_boards.all %}
 					<li><a href="{{ board.get_absolute_url }}" class="a-blk">{{ board.name }} <i class="fa fa-certificate"></i></a></li>
 					{% endfor %}
 				</ul>

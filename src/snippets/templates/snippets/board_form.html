@@ -13,6 +13,14 @@
 {% block body %}
 <h2 class="page-title">Create Board</h2>
 			
+	{% if form.errors.description %}
+	<ul>
+		{% for error in form.errors.description %}
+		<li>{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+			
 <section class="edit-board">
 	<form id="create-board" action="" method="post">
 		{% csrf_token %}
@@ -34,7 +42,6 @@
 			<div class="clear"></div>
 		</div>
 			
-		{{ form.as_p }}
 		
 	</form>
 </section>
