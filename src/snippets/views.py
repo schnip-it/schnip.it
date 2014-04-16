@@ -1,11 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 
 from .models import Snippet, Board
-from .forms import BoardForm
+from .forms import BoardForm, SnippetForm
 
 from ratings.views import RateView
 
@@ -25,13 +25,16 @@ class SnippetList(generic.ListView):
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(*args, **kwargs)
 
-class SnippetCreate(generic.edit.CreateView):
-    model = Snippet
-    fields = ["title", "description", "language", "tags", "board", "code"]
-
+class OwnedCreateView(generic.edit.CreateView):
     def form_valid(self, form):
+        self.object = form.save(commit=False)
         self.object.owner = self.request.user
-        return super().form_valid(form)
+        self.object.save()
+        return redirect(self.get_success_url())
+        
+class SnippetCreate(OwnedCreateView):
+    model = Snippet
+    form_class = SnippetForm
     
 class SnippetDetail(generic.DetailView):
     model = Snippet
@@ -61,13 +64,9 @@ class BoardList(generic.ListView):
 
         return r.order_by("name")
 
-class BoardCreate(generic.edit.CreateView):
+class BoardCreate(OwnedCreateView):
     model = Board
     form_class = BoardForm
-
-    def form_valid(self, form):
-        self.object.owner = self.request.user
-        return super().form_valid(form)
 
 class BoardDetail(generic.detail.SingleObjectMixin, generic.ListView):
     paginate_by = 60
