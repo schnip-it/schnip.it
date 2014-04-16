@@ -326,7 +326,7 @@ html, body {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -90px; /* the bottom margin is the negative value of the footer's height */
-	padding-bottom: 60px;
+	padding-bottom: 90px;
 }
 footer, .push {
 	clear: both;

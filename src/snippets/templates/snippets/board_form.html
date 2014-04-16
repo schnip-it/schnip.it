@@ -16,9 +16,8 @@
 <section class="edit-board">
 	<form id="create-board" action="" method="post">
 		{% csrf_token %}
-		{{ form.as_p }}
 		<header class="edit-board-header blue">
-			<input class="input-title" type="text" name="title" placeholder="Board Title">
+			<input class="input-title" type="text" name="{{ form.name.name }}" placeholder="Board Title">
 		</header>
 		<div class="clear"></div>
 		<!-- &#013;&#010; -->
@@ -34,6 +33,8 @@
 			
 			<div class="clear"></div>
 		</div>
+			
+		{{ form.as_p }}
 		
 	</form>
 </section>
