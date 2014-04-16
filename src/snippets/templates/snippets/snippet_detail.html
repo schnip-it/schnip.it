@@ -19,29 +19,29 @@
 			<li><h5>Updated {{ snippet.updated }} <small>Created {{ snippet.created }}</small><h5></li>
 		</ul>
 	</div>
-	
-	<a class="user-link" href="{{ snippet.user-url }}">
+
+	<a class="user-link" href="{{ snippet.owner.profile.get_absolute_url }}">
 		<div class="header-right">
-			<div class="user-image"><img src="{{ snippet.user-image }}" width="100" height="100"></div>
+			<div class="user-image"><img src="{{ snippet.owner.profile.avatar.url }}" width="100" height="100"></div>
 			<div class="info-container">
 				<ul>
 					<li>
-						<h4><small>Snippet by</small> {{ snippet.author }}</h4> 
+						<h4><small>Snippet by</small> {{ snippet.owner.username }}</h4>
 					</li>
 					<li>
-						<h5>{{ snippet.author-title }}</h5>
+						<h5>{{ snippet.owner.profile.sub1 }}</h5>
 					</li>
 					<li>
-						<h5>{{ snippet.author-sub-title }}</h5>
+						<h5>{{ snippet.owner.profile.sub2 }}</h5>
 					</li>
 				</ul>
 			</div>
-			
+
 		</div>
 	</a>
-	
+
 	<div class="clear"></div>
-	
+
 	<section class="edit-snippet">
 			<!-- &#013;&#010; -->
 			<div class="edit-snippet-body">

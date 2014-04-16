@@ -46,7 +46,9 @@ class Snippet(models.Model):
             sum += rating.score
             count += 1
 
-        return sum / count
+        if count: return sum / count
+
+        return 0
 
     def get_divisions(self, n = 5):
         return [x / (n - 1) for x in range(n)]
